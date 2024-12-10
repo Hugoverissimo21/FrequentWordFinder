@@ -1,0 +1,139 @@
+\documentclass[mirror, portugues]{revdetua}
+
+% Valid options are:
+%   portugues --------- main language is Portuguese
+%   final ------------- final version (default)
+%   times ------------- use times (postscript) fonts for text
+%   mirror ------------ prints a mirror image of the paper (with dvips)
+%   visiblelabels ----- \SL, \SN, \SP, \EL, \EN, etc. defined
+%   invisiblelabels --- \SL, \SN, \SP, \EL, \EN, etc. not defined (default)
+%
+% Note: the final version should use the times fonts
+% Note: the really final version should also use the mirror option
+
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} 
+\usepackage{comment}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\floatname{algorithm}{Algoritmo}
+\usepackage{graphicx}
+\usepackage[justification=centering]{caption}
+\usepackage{float}
+\usepackage{booktabs}
+%-------------------------------------
+% compiling:
+% Recipe: xelatex
+% Recipe: pdflatex -> bibtex -> pdflatex -> pdflatex
+% Recipe: xelatex
+%
+% notas:
+% rever se algoritmos e imagens estão onde devem
+%-------------------------------------
+\begin{document}
+
+\Header{03}{3}{Janeiro}{2025}{1}
+
+\title{TITULO DO TRABALHO}
+\author{Hugo Veríssimo - 124348 - hugoverissimo@ua.pt}
+\maketitle
+
+\begin{abstract}
+abstrato em ingles
+\end{abstract}
+
+\begin{resumo}
+abstrato em pt resumo
+\end{resumo}
+
+
+\section{Introdução}
+
+introoooooooo
+
+\section{Metodologia da Análise ?}
+
+metodologia ?
+
+\section{contagem 1}
+
+O primeiro algoritmo a ser implementado foi um algoritmo de Corte Aleatório, que consiste em gerar várias soluções aleatórias, comparar as mesmas e escolher a melhor entre elas \cite{EX69}.
+
+Este algoritmo pode ser então traduzido para o seguinte pseudocódigo:
+
+\begin{algorithm}[H]
+\raggedright
+\textbf{Entrada:}
+
+- lista de arestas e respetivos pesos (\textit{edges})
+
+- número de vértices (\textit{n\_nodes})
+
+- número de soluções a gerar (\textit{solutions})\\
+\textbf{Saída:} subconjuntos \textit{S} e \textit{T}, peso do corte (\textit{weight}) \\
+\hrule 
+\caption{Corte Aleatório}
+\begin{algorithmic}[1]
+    \State \texttt{best\_solution} $\gets$ \texttt{None}
+    \State \texttt{weight} $\gets$ 0
+    \State \texttt{seen\_solutions} $\gets$ empty set
+    \For{$i \gets 1$ \textbf{to} \texttt{solutions}}
+        \State \texttt{partition} $\gets$ random partition of the nodes
+        \If {\texttt{length}(\texttt{seen\_solutions}) $=$ $2^{\texttt{n\_nodes}}$}
+            \State \textbf{break}
+        \EndIf
+        \State \texttt{partition\_hash} $\gets$ hash the partition
+        \If {\texttt{partition\_hash} $\in$ \texttt{seen\_solutions}}
+            \State \textbf{continue}
+        \EndIf
+        \State Add \texttt{partition\_hash} to \texttt{seen\_solutions}
+        \State \texttt{new\_cut\_weight} $\gets$ compute the cut weight
+        \If {\texttt{new\_cut\_weight} $>$ \texttt{weight}}
+            \State \texttt{weight} $\gets$ \texttt{new\_cut\_weight}
+            \State \texttt{best\_solution} $\gets$ copy of \texttt{partition}
+        \EndIf
+    \EndFor
+    \State \texttt{S} $\gets$ set of nodes assigned to $0$ in \texttt{best\_solution}
+    \State \texttt{T} $\gets$ set of nodes assigned to $1$ in \texttt{best\_solution}
+    \Return \texttt{S}, \texttt{T}, \texttt{weight}
+\end{algorithmic}
+\end{algorithm}
+    
+
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.45\textwidth]{../assets/ops_Random Sol.png}
+%    \caption{Número de operações básicas efetuadas pelo algoritmo de Corte Aleatório em função do número de arestas do grafo, para diferentes valores de \texttt{solutions} (MS).}
+%    \label{fig:random_ops}
+%\end{figure}
+
+Quanto ao número de soluções testadas, a partir da Fig. 
+
+%\ref{fig:sols_randomrandom}
+
+
+\begin{table}[H]
+\centering
+\caption{Complexidade dos algoritmos pelo número de operações básicas.}
+\label{table:numops}
+\begin{tabular}{ll}
+\toprule
+\textbf{Algoritmo} & \textbf{Complexidade} \\
+\midrule
+Corte Aleatório & $O(m)$ \\
+Simulated Annealing & $O(m)$ \\
+Guloso Aleatório & $O(m^2 \times n)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+ffyf
+
+\section{Conclusão}
+
+conclusaoooo
+
+\bibliography{refs}
+
+\end{document}
