@@ -1,8 +1,12 @@
 \begin{thebibliography}{1}
 
-\bibitem{EX69}
-Anupam Gupta,
-\newblock ``15-854: Approximations algorithms'', 2014,
-\newblock https://www.cs.cmu.edu/afs/cs/academic/class/15854-f05/www/scribe/lec02.pdf. Accessed: 2024-11-28.
+\bibitem{AZ24}
+Amazon~Web Services,
+\newblock ``What is text analysis?'', 2024,
+\newblock https://aws.amazon.com/what-is/text-analysis/. Accessed: 2024-12-11.
+
+\bibitem{LH06}
+Hongyan Liu, Ying Lu, Jiawei Han, e Jun He,
+\newblock ``Error-adaptive and time-aware maintenance of frequency counts over data streams'', 2006.
 
 \end{thebibliography}

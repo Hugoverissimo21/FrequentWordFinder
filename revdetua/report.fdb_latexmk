@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex report"] 1733857354.33173 "report.aux" "report.bbl" "report" 1733869979.37502 0
+["bibtex report"] 1733952335.04238 "report.aux" "report.bbl" "report" 1733954801.71123 0
   "./p-revdetua.bst" 1326997358 15609 44ecfa447d812c289732ae87d3faed4d ""
-  "./refs.bib" 1733857334.07677 218 f616e84f2dc9b79b6cdb13b0963e8d0d ""
-  "report.aux" 1733869979.12113 430 f14f76e5f2885d75a64c45683f5071a1 "pdflatex"
+  "./refs.bib" 1733952334.84884 469 b5be16dfba90b215487cdd39a2dd45e8 ""
+  "report.aux" 1733954801.4512 464 16844200fa0f9a43b1321f8b92b66a7a "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["pdflatex"] 1733869978.69702 "/Users/hugover/Desktop/AA03/revdetua/report.tex" "report.pdf" "report" 1733869979.37515 0
-  "/Users/hugover/Desktop/AA03/revdetua/report.tex" 1733869978.52688 4237 b795a7e0845dd79cd08c5af4c0aac308 ""
+["pdflatex"] 1733954801.01374 "/Users/hugover/Desktop/AA03/revdetua/report.tex" "report.pdf" "report" 1733954801.71136 0
+  "/Users/hugover/Desktop/AA03/revdetua/report.tex" 1733954800.81882 8635 df2dcfcbda0f53d81d264686cf22e3ac ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -37,6 +37,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1248133631 36554 b67dc2cfa451409e100b3fcf5f506509 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb" 1248133631 32001 6aeea3afe875097b1eb0da29acd61e28 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
@@ -44,6 +45,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb" 1248133631 24287 6b803fa9eb1ddff9112e00519b09dd9e ""
@@ -86,9 +88,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724153806 5498206 6c0f03cb370063b7ddbd563e5f9ce23a ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724153954 8239412 02a25d85eb128426e9965e27e7615548 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "report.aux" 1733869979.12113 430 f14f76e5f2885d75a64c45683f5071a1 "pdflatex"
-  "report.bbl" 1733857354.42247 244 3fec905b77b0c4258f86cdda5dc3da1f "bibtex report"
-  "report.tex" 1733869978.52688 4237 b795a7e0845dd79cd08c5af4c0aac308 ""
+  "report.aux" 1733954801.4512 464 16844200fa0f9a43b1321f8b92b66a7a "pdflatex"
+  "report.bbl" 1733952335.14023 371 51aaf2f8cd5f7b8c96e238fc424375fd "bibtex report"
+  "report.tex" 1733954800.81882 8635 df2dcfcbda0f53d81d264686cf22e3ac ""
   "revdetua.cls" 1348080372 24164 8b1d9d26252f6b3f92c4a1888d855feb ""
   (generated)
   "report.aux"
