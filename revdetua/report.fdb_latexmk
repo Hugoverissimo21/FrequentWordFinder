@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex report"] 1733857354.33173 "report.aux" "report.bbl" "report" 1733857360.22003 0
+["bibtex report"] 1733857354.33173 "report.aux" "report.bbl" "report" 1733869979.37502 0
   "./p-revdetua.bst" 1326997358 15609 44ecfa447d812c289732ae87d3faed4d ""
   "./refs.bib" 1733857334.07677 218 f616e84f2dc9b79b6cdb13b0963e8d0d ""
-  "report.aux" 1733857359.94997 430 f14f76e5f2885d75a64c45683f5071a1 "pdflatex"
+  "report.aux" 1733869979.12113 430 f14f76e5f2885d75a64c45683f5071a1 "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["pdflatex"] 1733857359.52599 "/Users/hugover/Desktop/AA03/revdetua/report.tex" "report.pdf" "report" 1733857360.22015 0
-  "/Users/hugover/Desktop/AA03/revdetua/report.tex" 1733857359.33322 4182 1d74d3d8919a2c10c17aa0b9d439da5a ""
+["pdflatex"] 1733869978.69702 "/Users/hugover/Desktop/AA03/revdetua/report.tex" "report.pdf" "report" 1733869979.37515 0
+  "/Users/hugover/Desktop/AA03/revdetua/report.tex" 1733869978.52688 4237 b795a7e0845dd79cd08c5af4c0aac308 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -86,9 +86,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724153806 5498206 6c0f03cb370063b7ddbd563e5f9ce23a ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724153954 8239412 02a25d85eb128426e9965e27e7615548 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "report.aux" 1733857359.94997 430 f14f76e5f2885d75a64c45683f5071a1 "pdflatex"
+  "report.aux" 1733869979.12113 430 f14f76e5f2885d75a64c45683f5071a1 "pdflatex"
   "report.bbl" 1733857354.42247 244 3fec905b77b0c4258f86cdda5dc3da1f "bibtex report"
-  "report.tex" 1733857359.33322 4182 1d74d3d8919a2c10c17aa0b9d439da5a ""
+  "report.tex" 1733869978.52688 4237 b795a7e0845dd79cd08c5af4c0aac308 ""
   "revdetua.cls" 1348080372 24164 8b1d9d26252f6b3f92c4a1888d855feb ""
   (generated)
   "report.aux"
