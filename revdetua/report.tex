@@ -62,7 +62,7 @@ Este relatório visa explorar três abordagens para este problema: contadores ex
 
 \section{Metodologia da Análise}
 
-Para realizar a análise de frequência de palavras, foram selecionados três livros, a partir livraria online \textit{Project Gutenberg}, nomeadamente: \textit{Pinocchio: The Tale of a Puppet} (inglês), \textit{Le avventure di Pinocchio: Storia di un burattino} (italiano) e \textit{Pinocchion seikkailut: Kertomus marioneteista} (finlandês). Estes livros foram selecionados por serem traduções do mesmo livro original, conhecido em português como \textit{As Aventuras de Pinóquio}, de Carlo Collodi. A escolha destes livros permite a comparação da frequência de palavras em diferentes idiomas, bem como a análise de semelhanças e diferenças entre as traduções.
+Para realizar a análise de frequência de palavras, foram selecionados três livros, a partir livraria online \textit{Project Gutenberg} \cite{PG24}, nomeadamente: \textit{Pinocchio: The Tale of a Puppet} (inglês), \textit{Le avventure di Pinocchio: Storia di un burattino} (italiano) e \textit{Pinocchion seikkailut: Kertomus marioneteista} (finlandês). Estes livros foram selecionados por serem traduções do mesmo livro original, conhecido em português como \textit{As Aventuras de Pinóquio}, de Carlo Collodi. A escolha destes livros permite a comparação da frequência de palavras em diferentes idiomas, bem como a análise de semelhanças e diferenças entre as traduções.
 
 Numa primeira fase, os ficheiros de texto descarregados a partir do \textit{Project Gutenberg} foram processados removendo informações irrelevantes, como metadados e licenças, palavras insignificantes e sinais de pontuação. Para além disso todas as palavras foram convertidas para minúsculas e lematizadas. Estas transformações são fundamentais, de modo a simplificar o texto e concentrar a análise nas palavras mais relevantes, garantindo uma avaliação mais precisa e eficiente da frequência de termos. É importante referir que estas transformações foram realizadas com recurso à biblioteca \textit{spaCy}, através do \textit{Python}.
 
@@ -70,11 +70,10 @@ Numa primeira fase, os ficheiros de texto descarregados a partir do \textit{Proj
 implementar algortimos, analise dos dados, correr ns quantas vezes, .....
 
 
-\section{contagem 1}
+\section{Contadores Exatos}
 
-Contador Exato
-
-O primeiro algoritmo é a contagem toda 
+Quanto aos contadores exatos, tal como o nome indica, este tipo de técnica é exate, resultando numa contagem precisa da frequência de palavras, no contexto em causa.
+O algoritmo apresentado de seguida, designado por \textit{Contador Exato}, é um exemplo de um contador exato, que percorre o texto processado e regista a frequência de cada palavra num dicionário. Este algoritmo é eficiente em termos de precisão, uma vez que mantém um registo exato da contagem de cada palavra, no entanto, revela-se ineficiente em termos de memória, especialmente em situações em que o volume de texto é elevado.
 
 \begin{algorithm}[H]
 \raggedright
@@ -95,17 +94,13 @@ O primeiro algoritmo é a contagem toda
 \end{algorithmic}
 \end{algorithm}
     
+Atendendo à complexidade espacial, no pior caso, onde todas as palavras que constituem o texto \texttt{T} são distintas, a mesma é dada por $O(|\texttt{words}|)$, onde $|\texttt{words}|$ representa o número de palavras no texto. Isto acontece pelo facto do dicionário \texttt{D} conter uma entrada para cada palavra distinta no texto. NAO SEI SE ESTA CERTO, NS SE TENHO DE CONTABILIZAR O TAMANHO DE WORDS AO EM INVES DE SER SO O D ou REFERIR QUE O QUE IMPORTA É O TAMANHO DO DICIONARIO? TALVEZ FALAR DOS DOIS e dps no fim dizer q o words deve ser ignorado pq é o texto e o que importa é o dicionario? idk
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=0.45\textwidth]{../assets/ops_Random Sol.png}
-%    \caption{Número de operações básicas efetuadas pelo algoritmo de Corte Aleatório em função do número de arestas do grafo, para diferentes valores de \texttt{solutions} (MS).}
-%    \label{fig:random_ops}
-%\end{figure}
+comparison of the memory (complexity ?) of the algorithms
 
-Quanto ao número de soluções testadas, a partir da Fig. 
+.....
 
-%\ref{fig:sols_randomrandom}
+
 
 \section{contagem 2}
 
@@ -194,7 +189,15 @@ c & $O(m^2 \times n)$ \\
 \end{tabular}
 \end{table}
 
-ffyf
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.45\textwidth]{../assets/ops_Random Sol.png}
+%    \caption{Número de operações básicas efetuadas pelo algoritmo de Corte Aleatório em função do número de arestas do grafo, para diferentes valores de \texttt{solutions} (MS).}
+%    \label{fig:random_ops}
+%\end{figure}
+
+%\ref{fig:sols_randomrandom}
+
 
 \section{Conclusão}
 
