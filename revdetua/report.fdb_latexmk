@@ -1,16 +1,16 @@
 # Fdb version 4
-["bibtex report"] 1734284921.61018 "report.aux" "report.bbl" "report" 1734287122.30092 0
+["bibtex report"] 1734302396.62622 "report.aux" "report.bbl" "report" 1734302451.57161 0
   "./p-revdetua.bst" 1326997358 15609 44ecfa447d812c289732ae87d3faed4d ""
-  "./refs.bib" 1733995887.15952 638 b09dfe274d0a3786a659069552d473ab ""
-  "report.aux" 1734287122.0635 746 0f38213e95a1e799ec25a71eb33ba6ac "pdflatex"
+  "./refs.bib" 1734301582.52907 1519 38adedb5edcf019ddea7b511281796c9 ""
+  "report.aux" 1734302451.29051 846 2c9033c9648bb82ffcd01dabae98f7f5 "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["pdflatex"] 1734287119.35331 "/Users/hugover/Desktop/AA03/revdetua/report.tex" "report.pdf" "report" 1734287122.30105 0
+["pdflatex"] 1734302448.5286 "/Users/hugover/Desktop/AA03/revdetua/report.tex" "report.pdf" "report" 1734302451.57177 0
   "../assets/exact_distinct_words.png" 1734282713.56647 289422 5bb1dd899da4f77e55ce899f41ae8891 ""
   "../assets/exact_word_freqs.png" 1734282715.42452 955352 34f21df439a3c2cdeadef8f76ed99df4 ""
-  "/Users/hugover/Desktop/AA03/revdetua/report.tex" 1734287119.15593 14353 ee9ac664e6dbd66627724c16f8494806 ""
+  "/Users/hugover/Desktop/AA03/revdetua/report.tex" 1734302448.33291 16631 b882521dc75e183a1076dd546874f3f3 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -31,6 +31,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmti8.tfm" 1136768653 1504 1747189e0441d1c18f3ea56fafc1c480 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm" 1136768653 768 d7b9a2629a0c353102ad947dc9221d49 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
@@ -49,6 +50,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1248133631 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb" 1248133631 35660 fb24af7afbadb71801619f1415838111 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb" 1248133631 24287 6b803fa9eb1ddff9112e00519b09dd9e ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -96,9 +98,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724153806 5498206 6c0f03cb370063b7ddbd563e5f9ce23a ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724153954 8239412 02a25d85eb128426e9965e27e7615548 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "report.aux" 1734287122.0635 746 0f38213e95a1e799ec25a71eb33ba6ac "pdflatex"
-  "report.bbl" 1734284921.6996 526 f06585b17fac7e2ae4537f270dcfa896 "bibtex report"
-  "report.tex" 1734287119.15593 14353 ee9ac664e6dbd66627724c16f8494806 ""
+  "report.aux" 1734302451.29051 846 2c9033c9648bb82ffcd01dabae98f7f5 "pdflatex"
+  "report.bbl" 1734302396.7212 874 a0e0825dea9c1999282df0666339d996 "bibtex report"
+  "report.tex" 1734302448.33291 16631 b882521dc75e183a1076dd546874f3f3 ""
   "revdetua.cls" 1348080372 24164 8b1d9d26252f6b3f92c4a1888d855feb ""
   (generated)
   "report.aux"

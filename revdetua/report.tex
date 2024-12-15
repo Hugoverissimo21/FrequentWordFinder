@@ -63,7 +63,7 @@ Este relatório visa explorar três abordagens para este problema: contadores ex
 
 \section{Metodologia da Análise}
 
-Para realizar a análise de frequência de palavras, foram selecionados três livros, a partir livraria online \textit{Project Gutenberg} \cite{PG24}, nomeadamente: \textit{Pinocchio: The Tale of a Puppet} (inglês), \textit{Le avventure di Pinocchio: Storia di un burattino} (italiano) e \textit{Pinocchion seikkailut: Kertomus marioneteista} (finlandês). Estes livros foram selecionados por serem traduções do mesmo livro original, conhecido em português como \textit{As Aventuras de Pinóquio}, de Carlo Collodi. A escolha destes livros permite a comparação da frequência de palavras em diferentes idiomas, bem como a análise de semelhanças e diferenças entre as traduções.
+Para realizar a análise de frequência de palavras, foram selecionados três livros, a partir livraria online \textit{Project Gutenberg} \cite{PG24}, nomeadamente: \textit{Pinocchio: The Tale of a Puppet} (em inglês, EN), \textit{Le avventure di Pinocchio: Storia di un burattino} (em italiano, IT) e \textit{Pinocchion seikkailut: Kertomus marioneteista} (em finlandês, FI). Estes livros foram selecionados por serem traduções do mesmo livro original, conhecido em português como \textit{As Aventuras de Pinóquio}, de Carlo Collodi. A escolha destes livros permite a comparação da frequência de palavras em diferentes idiomas, bem como a análise de semelhanças e diferenças entre as traduções.
 
 Numa primeira fase, os ficheiros de texto descarregados a partir do \textit{Project Gutenberg} foram processados removendo informações irrelevantes, como metadados e licenças, palavras insignificantes e sinais de pontuação. Para além disso todas as palavras foram convertidas para minúsculas e lematizadas. Estas transformações são fundamentais, de modo a simplificar o texto e concentrar a análise nas palavras mais relevantes, garantindo uma avaliação mais precisa e eficiente da frequência de termos. É importante referir que estas transformações foram realizadas com recurso à biblioteca \textit{spaCy}, através do \textit{Python}.
 
@@ -107,9 +107,8 @@ através da aplicacao do algoritmo de contagem exata, foi possível identificar 
 \centering
 \caption{CAPTION top10 palavras mais frequentes em cada idioma}
 \label{table:top10_exatos}
-\begin{tabular}{lrlrlr}
+\begin{tabular}{lr|lr|lr}
 \toprule
-%METER COL NAMES A NEGRITO
 \multicolumn{2}{c}{EN} & \multicolumn{2}{c}{IT} & \multicolumn{2}{c}{FI} \\
 Palavra & \# & Palavra & \# & Palavra & \# \\
 \midrule
@@ -154,13 +153,11 @@ a diferenca pode ter a ver com o desempenho do spacy a lematizar as palavras em 
 
 
 
-\section{contagem 2}
+\section{Contadores Aproximados}
 
-Contadores Aproximados 
+Os contadores aproximados, também conhecidos por contadores probabilísticos, inventados por Robert Morris, são algoritmos especializados em realizar estimativas eficientes de contagens, utilizando quantidades reduzidas de memória em comparação com métodos tradicionais, através de técnicas baseadas em probabilidade. Estes contadores são particularmente úteis em situações em que a precisão exata da contagem não é crítica, permitindo uma redução significativa no uso de memória, sem comprometer a qualidade da análise \cite{RM78}.
 
-lalalla
-
-DIZER QUE É 1/16 ANTES DO PSEUDOCODIGO
+Um exemplo de um contador aproximado é o algoritmo de contagem aproximada apresentado de seguida, designado por \textit{Contador Aproximado}. Neste exemplo, o algoritmo utiliza uma probabilidade de contagem fixa de $1/16$. Para cada evento, neste caso, cada palavra do texto, é gerado um número aleatório entre 0 e 1, e a palavra é contada se o número gerado for menor que a probabilidade de contagem. Isto permite que a contagem seja realizada de forma aproximada, com uma margem de erro controlada, e um menor uso de memória.
 
 \begin{algorithm}[H]
 \raggedright
@@ -187,7 +184,13 @@ DIZER QUE É 1/16 ANTES DO PSEUDOCODIGO
 \end{algorithmic}
 \end{algorithm}
 
-aplicacao ao coiso;; talvelz adicionar valor real ? e cor vermelho na palavra se n devia estar no top e laranja se for top mas posicao errada ?
+é importante referir q existem outros tipos, diferentes fixed probability, etc.
+
+as contagem sao smp multiplas de 16, pq a probabilidade é 1/16, e dps é multiplicado por 16 para obter a contagem aproximada
+
+complexidade espacial tal tal bla bla
+
+nas tabelas seguintes, por ser um processo aleatorio, apos tere sudo corrido 20 vezes, foi calculada a média, valor max e min de cada palavra, escolhidos as 10 mais frequentes tendo em conta a media, e comparado com a contagem exata. nas tabelas seguintes pode-se observar esses resultados, para cada um dos idiomas analisados. também se repara que as palavras a preto mantiiveram a sua posucao em relacao ao top10 exato, as a laranja estao descoladas mas fazem parte, e as a vermelho não fazem parte do top10 real
 
 \begin{table}[H]
 \centering
@@ -195,7 +198,6 @@ aplicacao ao coiso;; talvelz adicionar valor real ? e cor vermelho na palavra se
 \label{table:top10_aprox_ingles}
 \begin{tabular}{lrrr|r}
 \toprule
-%METER COL NAMES A NEGRITO
 Palavra & $\text{\#}_{\text{médio}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{real}}$ \\
 \midrule
 pinocchio & 439 & 544 & 336 & 457 \\
@@ -218,7 +220,6 @@ boy & 140 & 176 & 80 & 140 \\
 \label{table:top10_aprox_italiano}
 \begin{tabular}{lrrr|r}
 \toprule
-%METER COL NAMES A NEGRITO
 Palavra & $\text{\#}_{\text{médio}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{real}}$ \\
 \midrule
 pinocchio & 439 & 544 & 240 & 460 \\
@@ -241,7 +242,6 @@ volere & 169 & 256 & 96 & 167 \\
 \label{table:top10_aprox_finlandes}
 \begin{tabular}{lrrr|r}
 \toprule
-%METER COL NAMES A NEGRITO
 Palavra & $\text{\#}_{\text{médio}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{real}}$ \\
 \midrule
 pinocchio & 445 & 672 & 320 & 443\\
@@ -261,24 +261,20 @@ huutaa & 86 & 128 & 32 & 81 \\
 nota se mais erros quanto menor é a contagem, pq ha maior densidade de palavras, como se viu na contagem exata figura tal
 
 
-\section{contagem 3}
+\section{Contadores Space-Saving}
 
-lalallala
+Pelo facto de muitos processos de geração de dados poderem ser modelados como fluxos de dados, que produzem enormes quantidades de informações simples isoladamente, mas que, em conjunto, formam um todo complexo, torna-se interessante a utilização de métodos que respondam rapidamente a cada nova informação e utilizem recursos muito pequenos em comparação com o volume total de dados. Neste contexto, o algoritmo de contagem \textit{Space-Saving} é uma solução eficiente para a identificação de itens frequentes em \textit{streams} de dados, permitindo acompanhar contagens frequentes de forma eficiente, mesmo sob restrições de memória \cite{CG09}.
 
-
-http://dimacs.rutgers.edu/~graham/pubs/papers/freqcacm.pdf fonte do PSEUDOCODIGO
+Este algoritmo é exposto no pseudocódigo seguinte:
 
 \begin{algorithm}[H]
 \raggedright
-\textbf{Entrada:}
-
+\textbf{Entrada:} \\
 - texto processado (\texttt{T}) \\
-
 - número máximo de itens a manter (\texttt{k}) \\
-
-\textbf{Saída:} dicionário com a estimativa das \texttt{k} palavras mais frequentes e respetivas frequências (\texttt{D}) \\
+\textbf{Saída:} dicionário com a estimativa das \texttt{k} palavras mais frequentes e respetivas frequências estimadas (\texttt{D}) \\
 \hrule 
-\caption{Contador \textit{Space-Saving}}
+\caption{Contador \textit{Space-Saving} \cite{CG09}}
 \begin{algorithmic}[1]
     \State \texttt{D} $\gets$ empty dictionary
     \State \texttt{words} $\gets$ list of words from \texttt{T}
@@ -296,6 +292,13 @@ http://dimacs.rutgers.edu/~graham/pubs/papers/freqcacm.pdf fonte do PSEUDOCODIGO
     \State \Return \texttt{D}
 \end{algorithmic}
 \end{algorithm}
+
+dizer limitacoes
+
+apresentar resultados
+
+....
+
 
 \section{Resultados}
 

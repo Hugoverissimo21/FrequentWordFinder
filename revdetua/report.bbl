@@ -14,4 +14,14 @@ Project Gutenberg Literary~Archive Foundation,
 \newblock ``Project gutenberg'',
 \newblock https://www.gutenberg.org. Accessed: 2024-12-11.
 
+\bibitem{RM78}
+Robert Morris,
+\newblock ``Counting large numbers of events in small registers'',
+\newblock {\em Commun. ACM}, vol.~21, no.~10, pp.~840--842, 1978.
+
+\bibitem{CG09}
+Graham Cormode e Marios Hadjieleftheriou,
+\newblock ``Finding the frequent items in streams of data'',
+\newblock {\em Commun. ACM}, vol.~52, no.~10, pp.~97--105, 2009.
+
 \end{thebibliography}
