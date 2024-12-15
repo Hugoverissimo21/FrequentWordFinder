@@ -22,6 +22,7 @@
 \usepackage[justification=centering]{caption}
 \usepackage{float}
 \usepackage{booktabs}
+\usepackage[table,xcdraw]{xcolor}
 %-------------------------------------
 % compiling:
 % Recipe: xelatex
@@ -100,6 +101,57 @@ comparison of the memory (complexity ?) of the algorithms
 
 .....
 
+através da aplicacao do algoritmo de contagem exata, foi possível identificar as 10 palavras mais frequentes em cada um dos livros analisados. A Tabela \ref{table:top10_exatos} apresenta as palavras mais frequentes em cada idioma, juntamente com o número de ocorrências de cada palavra.
+
+\begin{table}[H]
+\centering
+\caption{CAPTION top10 palavras mais frequentes em cada idioma}
+\label{table:top10_exatos}
+\begin{tabular}{lrlrlr}
+\toprule
+%METER COL NAMES A NEGRITO
+\multicolumn{2}{c}{EN} & \multicolumn{2}{c}{IT} & \multicolumn{2}{c}{FI} \\
+Palavra & \# & Palavra & \# & Palavra & \# \\
+\midrule
+pinocchio & 457 & pinocchio & 460 & pinocchio & 443 \\
+say & 282 & il & 386 & sanoa & 258 \\
+little & 238 & dire & 282 & saada & 143 \\
+puppet & 209 & si & 251 & alkaa & 134 \\
+come & 141 & burattino & 225 & tehdä & 134 \\
+boy & 140 & volere & 167 & marionetti & 131 \\
+like & 133 & vedere & 152 & poika & 81 \\
+good & 131 & andare & 134 & huutaa & 81 \\
+poor & 127 & povero & 134 & nähdä & 80 \\
+go & 116 & ragazzo & 126 & kysyä & 77 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+como seria de esperar, a palavra "pinocchio" é a mais frequente em todos os idiomas, uma vez que se trata do nome do protagonista do livro. Para além disso, é possível observar algumas semelhanças entre os idiomas, nomeadamente a presença de palavras que têm o mesmo siginificado em diferentes idiomas, como "puppet" e "burattino" (marioneta em italiano), ...
+
+para além disso, esta analise tambem permite a analise da quantidade de palavras distintas Fig. \ref{fig:distinc_words} em cada idioma, bem como a distribuição da frequência de palavras Fig. \ref{fig:word_freqs}, o que pode ser útil para a comparação de diferentes traduções de um mesmo livro, por exemplo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{../assets/exact_word_freqs.png}
+    \caption{distribuicao da frequência de palavras em cada idioma}
+    \label{fig:word_freqs}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{../assets/exact_distinct_words.png}
+    \caption{numero de palavras distintas em cada idioma}
+    \label{fig:distinc_words}
+\end{figure}
+
+a diferenca pode ter a ver com o desempenho do spacy a lematizar as palavras em diferentes idiomas, ou com a propria complexidade da lingua 
+
+
+
+
 
 
 \section{contagem 2}
@@ -134,6 +186,79 @@ DIZER QUE É 1/16 ANTES DO PSEUDOCODIGO
     \State \Return \texttt{D}
 \end{algorithmic}
 \end{algorithm}
+
+aplicacao ao coiso;; talvelz adicionar valor real ? e cor vermelho na palavra se n devia estar no top e laranja se for top mas posicao errada ?
+
+\begin{table}[H]
+\centering
+\caption{top10 dos aproximados sendo o top tendo em conta a media, e media arredondada ao inteiro, e idioma ING}
+\label{table:top10_aprox_ingles}
+\begin{tabular}{lrrr|r}
+\toprule
+%METER COL NAMES A NEGRITO
+Palavra & $\text{\#}_{\text{médio}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{real}}$ \\
+\midrule
+pinocchio & 439 & 544 & 336 & 457 \\
+say & 270 & 400 & 96 & 282 \\
+little & 227 & 320 & 144 & 238 \\
+puppet & 223 & 336 & 128 & 209 \\
+come & 148 & 240 & 64 & 141 \\
+boy & 140 & 176 & 80 & 140 \\
+\textcolor{orange}{go} & 132 & 240 & 48 & 116 \\
+\textcolor{orange}{poor} & 129 & 240 & 48 & 127 \\
+\textcolor{orange}{like} & 128 & 192 & 32 & 133 \\
+\textcolor{orange}{good} & 126 & 224 & 64 & 131 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{top10 dos aproximados sendo o top tendo em conta a media, e media arredondada ao inteiro, e idioma italiano}
+\label{table:top10_aprox_italiano}
+\begin{tabular}{lrrr|r}
+\toprule
+%METER COL NAMES A NEGRITO
+Palavra & $\text{\#}_{\text{médio}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{real}}$ \\
+\midrule
+pinocchio & 439 & 544 & 240 & 460 \\
+il & 379 & 512 & 224 & 386 \\
+dire & 263 & 448 & 160 & 282 \\
+si & 252 & 320 & 128 & 251 \\
+burattino & 223 & 320 & 96 & 225 \\
+volere & 169 & 256 & 96 & 167 \\
+\textcolor{orange}{povero} & 139 & 240 & 32 & 134 \\
+\textcolor{red}{bello} & 133 & 240 & 80 & 116 \\
+\textcolor{orange}{vedere} & 131 & 192 & 32 & 152 \\
+\textcolor{orange}{andare} & 127 & 192 & 80 & 134 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{top10 dos aproximados sendo o top tendo em conta a media, e media arredondada ao inteiro, e idioma finlandes}
+\label{table:top10_aprox_finlandes}
+\begin{tabular}{lrrr|r}
+\toprule
+%METER COL NAMES A NEGRITO
+Palavra & $\text{\#}_{\text{médio}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{real}}$ \\
+\midrule
+pinocchio & 445 & 672 & 320 & 443\\
+sanoa & 266 & 352 & 160 & 258 \\
+saada & 160 & 256 & 48 & 143 \\
+\textcolor{orange}{tehdä} & 136 & 224 & 48 & 134 \\
+\textcolor{orange}{marionetti} & 132 & 224 & 80 & 131 \\
+\textcolor{orange}{alkaa} & 104 & 160 & 64 & 134 \\
+\textcolor{red}{geppetto} & 87 & 160 & 32 & 71 \\
+huutaa & 86 & 128 & 32 & 81 \\
+\textcolor{red}{pää} & 80 & 128 & 32 & 65 \\
+\textcolor{red}{olla} & 76 & 144 & 16 & 61 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+nota se mais erros quanto menor é a contagem, pq ha maior densidade de palavras, como se viu na contagem exata figura tal
 
 
 \section{contagem 3}
@@ -172,31 +297,11 @@ http://dimacs.rutgers.edu/~graham/pubs/papers/freqcacm.pdf fonte do PSEUDOCODIGO
 \end{algorithmic}
 \end{algorithm}
 
-\section{resultados}
+\section{Resultados}
 
-\begin{table}[H]
-\centering
-\caption{CAPTION CAPTION CAPTION}
-\label{table:numops}
-\begin{tabular}{ll}
-\toprule
-\textbf{Algoritmo} & \textbf{Complexidade} \\
-\midrule
-a & $O(m)$ \\
-b & $O(m)$ \\
-c & $O(m^2 \times n)$ \\
-\bottomrule
-\end{tabular}
-\end{table}
+ou comparacao dos metodos ou assim
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[width=0.45\textwidth]{../assets/ops_Random Sol.png}
-%    \caption{Número de operações básicas efetuadas pelo algoritmo de Corte Aleatório em função do número de arestas do grafo, para diferentes valores de \texttt{solutions} (MS).}
-%    \label{fig:random_ops}
-%\end{figure}
 
-%\ref{fig:sols_randomrandom}
 
 
 \section{Conclusão}
