@@ -57,7 +57,6 @@ Contudo, a identificação precisa da frequência de palavras em textos de larga
 
 Assim, este relatório visa explorar três abordagens para este problema: contadores exatos, contadores aproximados e identificação de itens frequentes em \textit{streams} de dados.
 
-
 \section{Metodologia da Análise}
 
 Para realizar a análise de frequência de palavras, foram selecionados três livros, a partir livraria online \textit{Project Gutenberg} \cite{PG24}, nomeadamente: \textit{Pinocchio: The Tale of a Puppet} (em inglês, EN), \textit{Le avventure di Pinocchio: Storia di un burattino} (em italiano, IT) e \textit{Pinocchion seikkailut: Kertomus marioneteista} (em finlandês, FI). Estes livros foram selecionados por serem traduções do mesmo livro original, conhecido em português como \textit{As Aventuras de Pinóquio}, de Carlo Collodi, permitindo para além de uma comparação da frequência de palavras em diferentes idiomas, uma análise de semelhanças e diferenças entre as traduções.
@@ -71,7 +70,6 @@ Posteriormente, foram implementadas as abordagens referidas anteriormente, nomea
 Por fim, foram realizadas análises comparativas entre os resultados obtidos com as diferentes abordagens, nomeadamente em termos de .... !!! % precisão, eficiência e consumo de memória, de modo a identificar as vantagens e desvantagens de cada método.
 
 Atendendo a estas últimas fases, estas serão apresentadas em detalhe nas secções seguintes, com a apresentação dos resultados obtidos e a respetiva análise.
-
 
 \section{Contadores Exatos}
 
@@ -96,14 +94,12 @@ O algoritmo apresentado de seguida, designado por \textit{Contador Exato}, é um
     \State \Return \texttt{D}
 \end{algorithmic}
 \end{algorithm}
-    
-AQUI AQUI AQUI AQUI AQUI
 
-através da aplicacao do algoritmo de contagem exata, foi possível identificar as 10 palavras mais frequentes em cada um dos livros analisados. A Tabela \ref{table:top10_exatos} apresenta as palavras mais frequentes em cada idioma, juntamente com o número de ocorrências de cada palavra.
+Através da aplicacao do algoritmo de contagem exata, foi possível identificar as 10 palavras mais frequentes em cada um dos livros em análise. A Tabela \ref{table:top10_exatos} apresenta as palavras mais frequentes em cada idioma, juntamente com o número de ocorrências de cada palavra (\#).
 
 \begin{table}[H]
 \centering
-\caption{CAPTION top10 palavras mais frequentes em cada idioma}
+\caption{10 palavras mais frequentes em cada idioma (livro).}
 \label{table:top10_exatos}
 \begin{tabular}{lr|lr|lr}
 \toprule
@@ -124,40 +120,31 @@ go & 116 & ragazzo & 126 & kysyä & 77 \\
 \end{tabular}
 \end{table}
 
+Como seria de esperar, a palavra "pinocchio" é a mais frequente em todos os idiomas, uma vez que se trata do nome do protagonista do livro. Para além disso, é possível observar algumas semelhanças entre as diferentes traduções, nomeadamente a proximidade das frequências de palavras que têm o mesmo significado entre os idiomas. Por exemplo, as palavras "puppet", "burattino" e "marionetti", que significam marioneta, têm frequências semelhantes nos três idiomas, tal como as que significam rapaz ("boy", "ragazzo" e "poika"), dizer ("say", "dire" e "sanoa"), entre outras.
 
-como seria de esperar, a palavra "pinocchio" é a mais frequente em todos os idiomas, uma vez que se trata do nome do protagonista do livro. Para além disso, é possível observar algumas semelhanças entre os idiomas, nomeadamente a presença de palavras que têm o mesmo siginificado em diferentes idiomas, como "puppet" e "burattino" (marioneta em italiano), ...
-
-- most frequent / less frequent words are similar in the text files of the same book in different language
-
-para além disso, esta analise tambem permite a analise da quantidade de palavras distintas Fig. \ref{fig:distinc_words} em cada idioma, bem como a distribuição da frequência de palavras Fig. \ref{fig:word_freqs}, o que pode ser útil para a comparação de diferentes traduções de um mesmo livro, por exemplo.
+Ademais, atendendo à análise das palavras menos frequentes, é mais complexo identificar semelhanças entre as traduções, uma vez que a frequência de palavras menos frequentes é muito maior, tornando-se complexa a comparação entre os idiomas. Isto é comprovado pela distribuição da frequência de palavras apresentada na Fig. \ref{fig:word_freqs}, que demonstra um enorme número de palavras cuja contagem pequena. Ainda através da mesma visualização, é possível identificar que a distribuição da frequência de palavras é semelhante entre os diferentes idiomas, com uma grande quantidade de palavras com contagens baixas e uma diminuição exponencial da frequência à medida que a contagem aumenta.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{../assets/exact_word_freqs.png}
-    \caption{distribuicao da frequência de palavras em cada idioma}
+    \caption{Distribuição da frequência de palavras, por idioma.}
     \label{fig:word_freqs}
 \end{figure}
 
+Por fim, ainda através da aplicação do algoritmo de contagem exata, torna-se possível a análise da quantidade de palavras distintas em cada idioma, como apresentado na Fig. \ref{fig:distinc_words}. Neste caso, é possível observar que a quantidade aumenta de idioma para idioma, inglês (EN) $<$ italiano (IT) $<$ finlandês (FI), o que pode não representar uma distinção entre as traduções, pelo facto deste desequilíbrio poder ser influenciado por fatores como a complexidade da língua ou o desempenho do \textit{spaCy} na lematização das palavras.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{../assets/exact_distinct_words.png}
-    \caption{numero de palavras distintas em cada idioma}
+    \caption{Número de palavras distintas analisadas pelo algoritmo, em cada idioma.}
     \label{fig:distinc_words}
 \end{figure}
-
-a diferenca pode ter a ver com o desempenho do spacy a lematizar as palavras em diferentes idiomas, ou com a propria complexidade da lingua 
-
-
-
-
-
 
 \section{Contadores Aproximados}
 
 Os contadores aproximados, também conhecidos por contadores probabilísticos, inventados por Robert Morris, são algoritmos especializados em realizar estimativas eficientes de contagens, utilizando quantidades reduzidas de memória em comparação com métodos tradicionais, através de técnicas baseadas em probabilidade. Estes contadores são particularmente úteis em situações em que a precisão exata da contagem não é crítica, permitindo uma redução significativa no uso de memória, sem comprometer a qualidade da análise \cite{RM78}.
 
-Um exemplo de um contador aproximado é o algoritmo de contagem aproximada apresentado de seguida, designado por \textit{Contador Aproximado}. Neste exemplo, o algoritmo utiliza uma probabilidade de contagem fixa de $1/16$. Para cada evento, neste caso, cada palavra do texto, é gerado um número aleatório entre 0 e 1, e a palavra é contada se o número gerado for menor que a probabilidade de contagem. Isto permite que a contagem seja realizada de forma aproximada, com uma margem de erro controlada, e um menor uso de memória.
+Um exemplo de um contador aproximado é o algoritmo de contagem aproximada apresentado de seguida, designado por \textit{Contador Aproximado}. Neste exemplo, o algoritmo utiliza uma probabilidade de contagem fixa de $1/16$, pelo que apenas é estudado um caso particular deste tipo de algoritmos neste relatório. Para cada evento, neste caso, cada palavra do texto, é gerado um número aleatório entre 0 e 1, e a palavra é contada se o número gerado for menor que a probabilidade de contagem. Isto permite que a contagem seja realizada de forma aproximada, com uma margem de erro controlada, e um menor uso de memória.
 
 \begin{algorithm}[H]
 \raggedright
@@ -184,17 +171,11 @@ Um exemplo de um contador aproximado é o algoritmo de contagem aproximada apres
 \end{algorithmic}
 \end{algorithm}
 
-é importante referir q existem outros tipos, diferentes fixed probability, etc.
-
-as contagem sao smp multiplas de 16, pq a probabilidade é 1/16, e dps é multiplicado por 16 para obter a contagem aproximada
-
-complexidade espacial tal tal bla bla
-
-nas tabelas seguintes, por ser um processo aleatorio, apos tere sudo corrido 20 vezes, foi calculada a média, valor max e min de cada palavra, escolhidos as 10 mais frequentes tendo em conta a media, e comparado com a contagem exata. nas tabelas seguintes pode-se observar esses resultados, para cada um dos idiomas analisados. também se repara que as palavras a preto mantiiveram a sua posucao em relacao ao top10 exato, as a laranja estao descoladas mas fazem parte, e as a vermelho não fazem parte do top10 real
+Pelo facto deste algoritmo ter uma componente aleatória, para a obtenção dos resultados relativos ao mesmo, esta abordagem foi aplicada a cada livro em análise 20 vezes. Posteriormente, para cada uma das traduções, foi calculada a contagem (\#) mínima, média e máxima das palavras, sendo selecionadas as 10 palavras mais frequentes com base na média, de modo a obter uma estimativa das palavras mais frequentes em cada idioma. Estas contagens, tal como a contagem exata ($\text{\#}_\text{real}$), são apresentadas nas seguintes tabelas (Tabela \ref{table:top10_aprox_ingles} a \ref{table:top10_aprox_finlandes}). Nestas tabelas, para além das contagens referidas, também é possível verificar um código de cores nas palavras, preto, laranja e vermelho, que indicam se a posição da palavra está correta na ordem das 10 palavras mais frequentes, se está deslocada, ou se não faz parte das 10 mais frequentes de todo, respetivamente.
 
 \begin{table}[H]
 \centering
-\caption{top10 dos aproximados sendo o top tendo em conta a media, e media arredondada ao inteiro, e idioma ING}
+\caption{Estimativa das 10 palavras mais frequentes, pelo algoritmo de contagem aproximada, para o livro em inglês (IN).}
 \label{table:top10_aprox_ingles}
 \begin{tabular}{lrrr|r}
 \toprule
@@ -216,7 +197,7 @@ boy & 80 & 140 & 176 & 140 \\
 
 \begin{table}[H]
 \centering
-\caption{top10 dos aproximados sendo o top tendo em conta a media, e media arredondada ao inteiro, e idioma italiano}
+\caption{Estimativa das 10 palavras mais frequentes, pelo algoritmo de contagem aproximada, para o livro em italiano (IT).}
 \label{table:top10_aprox_italiano}
 \begin{tabular}{lrrr|r}
 \toprule
@@ -238,7 +219,7 @@ volere & 96 & 169 & 256 & 167 \\
 
 \begin{table}[H]
 \centering
-\caption{top10 dos aproximados sendo o top tendo em conta a media, e media arredondada ao inteiro, e idioma finlandes}
+\caption{Estimativa das 10 palavras mais frequentes, pelo algoritmo de contagem aproximada, para o livro em finlandês (FI).}
 \label{table:top10_aprox_finlandes}
 \begin{tabular}{lrrr|r}
 \toprule
@@ -258,8 +239,7 @@ huutaa & 32 & 86 & 128 & 81 \\
 \end{tabular}
 \end{table}
 
-nota se mais erros quanto menor é a contagem, pq ha maior densidade de palavras, como se viu na contagem exata figura tal
-
+Assim, é possível verificar que este algoritmo é tanto melhor quanto maior é a contagem real da palavra, o que se deve ao facto de haver uma menor densidade de palavras com contagens próximas, como foi verificado na contagem exata (Fig. \ref{fig:word_freqs}) e ao facto da probabilidade de contagem ser fixa, o que implica que a contagem de palavras com contagens mais baixas seja menos precisa.
 
 \section{Contadores Space-Saving}
 
@@ -293,11 +273,11 @@ Este algoritmo é exposto no pseudocódigo seguinte:
 \end{algorithmic}
 \end{algorithm}
 
-ao aplicar o algortimo aos dados ...
+Pelo facto deste algoritmo ser sensível ao valor de $k$, torna-se importante a realização de uma análise para a determinação do valor mínimo de $k$ que permita a obtenção de resultados precisos, neste caso das 10 palavras mais frequentes, sem comprometer a eficiência espacial do algoritmo \cite{ZF22}. Na Tabela \ref{table:top10_ss10} pode-se observar um exemplo de aplicação do algoritmo em análise, para um valor $k$ inadequado.
 
 \begin{table}[H]
 \centering
-\caption{CAPTION top10 com space saving 10 para os idiomas ingles e finlandes}
+\caption{Estimativa das 10 palavras mais frequentes, pelo algoritmo de contagem \textit{Space-Saving}, com $k = 10$, para as traduções em inglês e finlandês.}
 \label{table:top10_ss10}
 \begin{tabular}{lr|lr}
 \toprule
@@ -318,41 +298,24 @@ little & 1713 & oikeaksi & 1807 \\
 \end{tabular}
 \end{table}
 
+Verifica-se que, quando o $k$ é $10$, todas as contagens têm o mesmo valor ($k/n$, onde $n$ é o número total de palavras), aproximadamente, o que não corresponde à realidade. Isto deve-se ao facto de o $k$ ser demasiado pequeno, e como tal, o algoritmo não consegue manter uma contagem precisa das palavras mais frequentes.
 
-
-quando o k é 10, ve se que todos os valores têm o mesmo valor aproximadamente, o que nao corresponde a realidade, tanto para os resultados dos idiomas apresentados, como para o italiano. isto deve se ao facto de o k ser muito pequeno, e como tal, o algoritmo nao consegue manter a contagem de todas as palavras.
-
-
-- https://www.vldb.org/pvldb/vol15/p1215-zhao.pdf
-
-- All items whose true count is > n / k are stored ! : n = total number of items, k = number of counters (k = 20 n chega)
-
-- Smallest count min cannot be larger than e x n: IMPLICA AUMENTAR O K ? SIM!!!!
-
-fazer em \% a qnt de k pq é normal ser maior e tal, mas meter o grafico a explicar, posso meter o k = 5 para mostrar os maus resultados e tal e dps meto o grafico e mostro a escolha e tudo mais bla bla
-
-importante dizer q contagens significativas sao aquelas q nao esta tao proximas da media por causa da situacao do n/k +- 1\%
-
-MOSTRAR GRAFICO E DIZER Q OSAO OS PONTINHOS E Q A LINHA É TP OS 10 SIGNIFICATIVOS, O QUE É O MAIS RELEVANTE QUE PQ A ANALISE ESTA MAIORITARIAMENTE FOCADA NO TOP 10
+Tendo em vista a determinação do valor mínimo de $k$, com o objetivo de determinar os 10 itens mais frequentes, foi criada uma medida de contagens significativas, que consiste no número de contagens que estão a uma distância significativa do valor $k/n$, neste caso, de pelo menos $1\%$. A Fig. \ref{fig:meaningful_wordscount_k} apresenta a quantidade de palavras significativas em função de $k$, para o idioma italiano, e uma linha horizontal que representa o valor $10$, o número de palavras a identificar. Assim, é esperado que o $k$ mínimo seja o valor mais baixo que permita a identificação de pelo menos 10 palavras significativas (primeiro ponto acima da linha). É também importante referir que, ainda a partir da visualização, é possível observar a proporção entre $k$ e o número total de palavras ($n$) (eixo superior), para cada $k$, permitindo uma perceção da eficiência espacial do algoritmo.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{../assets/ss_signcount.png}
-    \caption{qnt de palavras significataivas em funcao de k para o idioma italiano}
+    \caption{Número de palavras significativas em função do valor de $k$, para a tradução em italiano.}
     \label{fig:meaningful_wordscount_k}
 \end{figure}
 
-falar tbm das percentagens q estao em cima e q, q mostram q o k é bem menor q o numero total de palavras
-
-...
-
-apos analise do valor minimo de k para que haja uma contagem significativa maior que 10, foi observarvado os seguintes valores minimos
+Através de uma análise numérica, com a metodologia referida, envolvendo o número de palavras significativas, foi possível determinar o valor mínimo de $k$ para cada uma das traduções, sendo estes apresentados na Tabela \ref{table:min_k_for_SStop10}.
 
 \begin{table}[H]
 \centering
-\caption{CAPTION s}
+\caption{Valor mínimo de $k$ para que o número de palavras significativas seja superior a 10, para cada tradução.}
 \label{table:min_k_for_SStop10}
-\begin{tabular}{rr|rr|rr}
+\begin{tabular}{cc|cc|cc}
 \toprule
 \multicolumn{2}{c}{EN} & \multicolumn{2}{c}{IT} & \multicolumn{2}{c}{FI} \\
 $k$ & $k/n$ & $k$ & $k/n$ & $k$ & $k/n$ \\
@@ -362,13 +325,11 @@ $59$ & $0.344\%$ & $61$ & $0.309\%$ & $67$ & $0.371\%$ \\
 \end{tabular}
 \end{table}
 
-como todos os valores, tanto de k sao proximos, de modo a garantir uma certa coerencia ou igualdade ou criterio na comapracao dos resultados, sera aplicado o space savving a todos os livros com k = 70, visto não ser um valor significativo de memoria e ser suficiente para garantir uma contagem significativa de palavras para os 3 livros
-
-para k = 70 temos (falta meter cores e resultado real? SE O TOP10 ESTIVER CERTO, METER COR NA CONTAGEM COM BASE NO DESVIO ABSOLUTO)
+Pelo facto de todos os valores de $k$ obtidos a partir da análise da tabela anterior serem próximos e não representarem um valor significativo de memória, foi selecionado o valor $k = 70$ para a aplicação do algoritmo de contagem \textit{Space-Saving} a todos os livros em análise. A Tabela \ref{table:top10_ss70} apresenta as 10 palavras mais frequentes em cada um dos livros, com base na aplicação do algoritmo com $k = 70$, juntamente com a sua contagem estimada, e um código de cores nas palavras, que indica se a posição da palavra está correta na ordem das 10 palavras mais frequentes (preto), se está deslocada (laranja), ou se não faz parte das 10 mais frequentes de todo (vermelho).
 
 \begin{table}[H]
 \centering
-\caption{CAPTION top10 palavras do SS70}
+\caption{Estimativa das 10 palavras mais frequentes, pelo algoritmo de contagem \textit{Space-Saving}, com $k = 70$.}
 \label{table:top10_ss70}
 \begin{tabular}{lr|lr|lr}
 \toprule
@@ -377,21 +338,25 @@ Palavra & \# & Palavra & \# & Palavra & \# \\
 \midrule
 pinocchio & 457 & pinocchio & 466 & pinocchio & 443 \\
 say & 288 & il & 389 & sanoa & 266 \\
-little & 270 & dire & 283 & pieni & 257 \\
-good & 244 & burattino & 283 & geppetto & 257 \\
-snail & 243 & pesce & 280 & ihmeellinen & 256 \\
-fairy & 243 & si & 279 & isä & 256 \\
-new & 242 & ragazzo & 279 & vanha & 256 \\
-boy & 242 & ciuchino & 279 & istua & 256 \\
-look & 242 & geppetto & 278 & pää & 256 \\
-geppetto & 242 & fata & 278 & äkkinäinen & 256 \\
+little & 270 & dire & 283 & \textcolor{red}{pieni} & 257 \\
+\textcolor{orange}{good} & 244 & \textcolor{orange}{burattino} & 283 & \textcolor{red}{geppetto} & 257 \\
+\textcolor{red}{snail} & 243 & \textcolor{red}{pesce} & 280 & \textcolor{red}{ihmeellinen} & 256 \\
+\textcolor{red}{fairy} & 243 & \textcolor{orange}{si} & 279 & \textcolor{red}{isä} & 256 \\
+\textcolor{red}{new} & 242 & \textcolor{orange}{ragazzo} & 279 & \textcolor{red}{vanha} & 256 \\
+\textcolor{orange}{boy} & 242 & \textcolor{red}{ciuchino} & 279 & \textcolor{red}{istua} & 256 \\
+\textcolor{red}{look} & 242 & \textcolor{red}{geppetto} & 278 & \textcolor{red}{pää} & 256 \\
+\textcolor{red}{geppetto} & 242 & \textcolor{red}{fata} & 278 & \textcolor{red}{äkkinäinen} & 256 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-os resultados n foram os mlhores, ainda ha confusao ali e talvez paavras nao significativas, pelo que eventualmente podem ser procuradas melhores formas em vez do intervalo em torno da media, mas reparase numa melgoria substancial face ao ss5
+Pelo facto dos resultados obtidos com o algoritmo de contagem \textit{Space-Saving} com $k = 70$ não serem suficientemente precisos, devido ao valor de $k$ e por existirem várias contagens muito próximas, nas 10 palavras mais frequentes, pode-se concluir que a medida de contagens significativas poderá ter de ser melhorada, possivelmente aumentando a distância que determina a significância de uma contagem.
 
-assim, de forma empirica, foi selecionado um k = 150
+AQUI AQUI AQUI AQUI AQUI
+
+
+Não sendo a determinação desta medida o foco deste estudo, foi selecionado empiricamente um valor de $k = 150$, para ......
+
 
 \begin{table}[H]
 \centering

@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: report.aux
 The style file: p-revdetua.bst
 Database file #1: refs.bib
-You've used 5 entries,
+You've used 6 entries,
             1840 wiz_defined-function locations,
-            456 strings with 3478 characters,
-and the built_in function-call counts, 880 in all, are:
-= -- 68
-> -- 34
+            466 strings with 3760 characters,
+and the built_in function-call counts, 1154 in all, are:
+= -- 91
+> -- 48
 < -- 0
-+ -- 14
-- -- 9
-* -- 63
-:= -- 140
-add.period$ -- 5
-call.type$ -- 5
-change.case$ -- 5
++ -- 19
+- -- 13
+* -- 92
+:= -- 184
+add.period$ -- 6
+call.type$ -- 6
+change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 31
-empty$ -- 105
-format.name$ -- 9
-if$ -- 197
+cite$ -- 6
+duplicate$ -- 39
+empty$ -- 131
+format.name$ -- 13
+if$ -- 257
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 2
-newline$ -- 27
-num.names$ -- 5
-pop$ -- 24
+int.to.str$ -- 6
+missing$ -- 3
+newline$ -- 32
+num.names$ -- 6
+pop$ -- 25
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 18
+skip$ -- 20
 stack$ -- 0
-substring$ -- 39
-swap$ -- 5
+substring$ -- 66
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 7
-width$ -- 6
-write$ -- 51
+while$ -- 9
+width$ -- 7
+write$ -- 62
