@@ -36,7 +36,7 @@
 
 \Header{03}{3}{Janeiro}{2025}{1}
 
-\title{TITULO DO TRABALHO}
+\title{Análise de Frequência de Palavras}
 \author{Hugo Veríssimo - 124348 - hugoverissimo@ua.pt}
 \maketitle
 
@@ -55,22 +55,22 @@ A análise de texto é uma área de estudo fundamental, com diversas aplicaçõe
 
 Contudo, a identificação precisa da frequência de palavras em textos de larga escala apresenta desafios significativos, especialmente em termos de memória. Métodos de contagem precisa, que mantêm o registo exato da contagem de cada palavra, revelam-se ineficientes devido ao elevado consumo de memória. Há assim a necessidade do estudo de métodos mais eficientes e escaláveis, principalmente em situações em que os dados estão em constante fluxo, como em \textit{streams} de dados. Neste contexto, algoritmos de contagem aproximada e identificação de itens frequentes têm vindo a ganhar destaque, uma vez que permitem a identificação de palavras mais frequentes de forma eficiente e com uma margem de erro controlada \cite{LH06}.
 
-Este relatório visa explorar três abordagens para este problema: contadores exatos, contadores aproximados e identificação de itens frequentes em \textit{streams} de dados. Para cada uma destas abordagens, será apresentado um algoritmo e .....
-
-
-%Além da implementação dessas abordagens, será realizada uma análise sobre a eficiência computacional de cada uma delas, considerando o tempo de execução e o uso de memória, bem como suas limitações em termos de precisão e aplicabilidade em diferentes cenários. O objetivo é entender as trade-offs entre precisão e eficiência e fornecer uma base para a escolha do método mais adequado para diferentes tipos de dados e requisitos de processamento. CHATICEGERONIMOPORTUGALTIAGO
+Assim, este relatório visa explorar três abordagens para este problema: contadores exatos, contadores aproximados e identificação de itens frequentes em \textit{streams} de dados.
 
 
 \section{Metodologia da Análise}
 
-Para realizar a análise de frequência de palavras, foram selecionados três livros, a partir livraria online \textit{Project Gutenberg} \cite{PG24}, nomeadamente: \textit{Pinocchio: The Tale of a Puppet} (em inglês, EN), \textit{Le avventure di Pinocchio: Storia di un burattino} (em italiano, IT) e \textit{Pinocchion seikkailut: Kertomus marioneteista} (em finlandês, FI). Estes livros foram selecionados por serem traduções do mesmo livro original, conhecido em português como \textit{As Aventuras de Pinóquio}, de Carlo Collodi. A escolha destes livros permite a comparação da frequência de palavras em diferentes idiomas, bem como a análise de semelhanças e diferenças entre as traduções.
+Para realizar a análise de frequência de palavras, foram selecionados três livros, a partir livraria online \textit{Project Gutenberg} \cite{PG24}, nomeadamente: \textit{Pinocchio: The Tale of a Puppet} (em inglês, EN), \textit{Le avventure di Pinocchio: Storia di un burattino} (em italiano, IT) e \textit{Pinocchion seikkailut: Kertomus marioneteista} (em finlandês, FI). Estes livros foram selecionados por serem traduções do mesmo livro original, conhecido em português como \textit{As Aventuras de Pinóquio}, de Carlo Collodi, permitindo para além de uma comparação da frequência de palavras em diferentes idiomas, uma análise de semelhanças e diferenças entre as traduções.
+
+% numero total de palavras que cada book tem ? n = ?
 
 Numa primeira fase, os ficheiros de texto descarregados a partir do \textit{Project Gutenberg} foram processados removendo informações irrelevantes, como metadados e licenças, palavras insignificantes e sinais de pontuação. Para além disso todas as palavras foram convertidas para minúsculas e lematizadas. Estas transformações são fundamentais, de modo a simplificar o texto e concentrar a análise nas palavras mais relevantes, garantindo uma avaliação mais precisa e eficiente da frequência de termos. É importante referir que estas transformações foram realizadas com recurso à biblioteca \textit{spaCy}, através do \textit{Python}.
 
+Posteriormente, foram implementadas as abordagens referidas anteriormente, nomeadamente contadores exatos, contadores aproximados e identificação de itens frequentes em \textit{streams} de dados, com o objetivo de identificar as 10 palavras mais frequentes em cada um dos livros em análise.
 
-implementar algortimos, analise dos dados, correr ns quantas vezes, .....
+Por fim, foram realizadas análises comparativas entre os resultados obtidos com as diferentes abordagens, nomeadamente em termos de .... !!! % precisão, eficiência e consumo de memória, de modo a identificar as vantagens e desvantagens de cada método.
 
-numero total de palavras que cada book tem ? n = ?
+Atendendo a estas últimas fases, estas serão apresentadas em detalhe nas secções seguintes, com a apresentação dos resultados obtidos e a respetiva análise.
 
 
 \section{Contadores Exatos}
@@ -97,11 +97,7 @@ O algoritmo apresentado de seguida, designado por \textit{Contador Exato}, é um
 \end{algorithmic}
 \end{algorithm}
     
-Atendendo à complexidade espacial, no pior caso, onde todas as palavras que constituem o texto \texttt{T} são distintas, a mesma é dada por $O(|\texttt{words}|)$, onde $|\texttt{words}|$ representa o número de palavras no texto. Isto acontece pelo facto do dicionário \texttt{D} conter uma entrada para cada palavra distinta no texto. NAO SEI SE ESTA CERTO, NS SE TENHO DE CONTABILIZAR O TAMANHO DE WORDS AO EM INVES DE SER SO O D ou REFERIR QUE O QUE IMPORTA É O TAMANHO DO DICIONARIO? TALVEZ FALAR DOS DOIS e dps no fim dizer q o words deve ser ignorado pq é o texto e o que importa é o dicionario? idk
-
-comparison of the memory (complexity ?) of the algorithms
-
-.....
+AQUI AQUI AQUI AQUI AQUI
 
 através da aplicacao do algoritmo de contagem exata, foi possível identificar as 10 palavras mais frequentes em cada um dos livros analisados. A Tabela \ref{table:top10_exatos} apresenta as palavras mais frequentes em cada idioma, juntamente com o número de ocorrências de cada palavra.
 
@@ -130,6 +126,8 @@ go & 116 & ragazzo & 126 & kysyä & 77 \\
 
 
 como seria de esperar, a palavra "pinocchio" é a mais frequente em todos os idiomas, uma vez que se trata do nome do protagonista do livro. Para além disso, é possível observar algumas semelhanças entre os idiomas, nomeadamente a presença de palavras que têm o mesmo siginificado em diferentes idiomas, como "puppet" e "burattino" (marioneta em italiano), ...
+
+- most frequent / less frequent words are similar in the text files of the same book in different language
 
 para além disso, esta analise tambem permite a analise da quantidade de palavras distintas Fig. \ref{fig:distinc_words} em cada idioma, bem como a distribuição da frequência de palavras Fig. \ref{fig:word_freqs}, o que pode ser útil para a comparação de diferentes traduções de um mesmo livro, por exemplo.
 
@@ -520,19 +518,9 @@ kysyä & 10 & 11 & - & - & 14 \\
 
 ou comparacao dos metodos ou assim
 
-- aa - ver erros e isso nos resultados das contagens, de forma quantificada e grafica se der
-
 - analysis of the computational efficiency and limitations of the developed approaches ()
 
-    - absolute and relative errors (lowest value, highest value, average value, etc.)
-
     - evaluate the quality of estimates
-
-    - same most frequent / less frequent words are identified, and in the same relative order
-
-    - most frequent / less frequent words are similar in the text files of the same book in different language
-
-    - Compare the performance between themselves and regarding the exact counts.
 
 NAS CONTAGENS IGUAIS HA RANKS DIFERENTES, DEVIA METER IGUAL, ACHO Q ISSO SO INTERSSA NA TABELA AGR NA ULTIMA, MAS CONFIRMAR
 
