@@ -425,6 +425,97 @@ isto releva.... (trade off, limitacoes, etc, cada caso, testes de varios k,....)
 
 \section{Resultados}
 
+llalalla
+
+\subsection{analise de memoria}
+
+\begin{table}[H]
+\centering
+\caption{analise de memoria, em bytes? para cada alg}
+\label{table:memoria}
+\begin{tabular}{lrrrrr}
+\toprule
+idioma & Exact & Appro & SS10 & SS70 & SS150 \\
+\midrule
+EN & 525112 & 359432 & 7984 & 18832 & 33264 \\
+IT & 865568 & 572312 & 8064 & 18992 & 33664 \\
+FI &1332984 & 884776 & 8176 & 20000 & 35888 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{analise de precisao?}
+
+tendo em conta o rank
+
+\begin{table}[H]
+\centering
+\caption{ranks top10 para cada alg, em ingles}
+\label{table:rank10_ing}
+\begin{tabular}{lrrrrr}
+\toprule
+word & exact & aprox & ss10 & ss70 & ss150 \\
+\midrule
+pinocchio & 1 & 1 & - & 1 & 1 \\
+say & 2 & 2 & 3 & 2 & 2 \\
+little & 3 & 3 & 10 & 3 & 3 \\
+puppet & 4 & 4 & 7 & 20 & 4 \\
+come & 5 & 5 & - & - & 6 \\
+boy & 6 & 6 & 1 & 8 & 5 \\
+like & 7 & 9 & - & - & 9 \\
+good & 8 & 10 & - & 4 & 7 \\
+poor & 9 & 8 & - & - & 11 \\
+go & 10 & 7 & - & 11 & 10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{ranks top10 para cada alg, em italiano}
+\label{table:rank10_it}
+\begin{tabular}{lrrrrr}
+\toprule
+word & exact & aprox & ss10 & ss70 & ss150 \\
+\midrule
+pinocchio & 1 & 1 & - & 1 & 1 \\
+il & 2 & 2 & - & 2 & 2 \\
+dire & 3 & 3 & - & 3 & 3 \\
+si & 4 & 4 & - & 6 & 4 \\
+burattino & 5 & 5 & - & 4 & 5 \\
+volere & 6 & 6 & - & - & 6 \\
+vedere & 7 & 9 & - & - & 7 \\
+andare & 8 & 10 & - & - & 10 \\
+povero & 9 & 7 & - & - & 12 \\
+ragazzo & 10 & 12 & - & 7 & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{ranks top10 para cada alg, em finlandes}
+\label{table:rank10_fi}
+\begin{tabular}{lrrrrr}
+\toprule
+word & exact & aprox & ss10 & ss70 & ss150 \\
+\midrule
+pinocchio & 1 & 1 & - & 1 & 1 \\
+sanoa & 2 & 2 & - & 2 & 2 \\
+saada & 3 & 3 & - & 47 & 3 \\
+alkaa & 4 & 6 & - & 24 & 5 \\
+tehdä & 5 & 4 & - & 25 & 6 \\
+marionetti & 6 & 5 & 7 & 19 & 4 \\
+poika & 7 & 14 & - & - & 17 \\
+huutaa & 8 & 8 & - & - & 135 \\
+nähdä & 9 & 12 & - & - & 13 \\
+kysyä & 10 & 11 & - & - & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
 - NAO TE PREOCUPES TANTO COM COMPLEXIDADE ESPACIAL, TENS DE TER MAIS EM CONTA OS BYTES... talvez fazer analise de bytes dentro de cada seccao e dps no fim fazer uma tabela 
 
 ou comparacao dos metodos ou assim
