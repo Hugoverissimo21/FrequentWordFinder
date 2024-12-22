@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.20)  15 DEC 2024 22:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.20)  22 DEC 2024 00:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -292,47 +292,47 @@ Package caption Info: End \AtBeginDocument code.
 
 
 
-Underfull \hbox (badness 10000) detected at line 86
+Underfull \hbox (badness 10000) detected at line 88
 []\OT1/cmr/m/n/8 1:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 87
+Underfull \hbox (badness 10000) detected at line 89
 []\OT1/cmr/m/n/8 2:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 88
+Underfull \hbox (badness 10000) detected at line 90
 []\OT1/cmr/m/n/8 3:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 89
+Underfull \hbox (badness 10000) detected at line 91
 []\OT1/cmr/m/n/8 4:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 90
+Underfull \hbox (badness 10000) detected at line 92
 []\OT1/cmr/m/n/8 5:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 91
+Underfull \hbox (badness 10000) detected at line 93
 []\OT1/cmr/m/n/8 6:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 92
+Underfull \hbox (badness 10000) detected at line 94
 []\OT1/cmr/m/n/8 7:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 93
+Underfull \hbox (badness 10000) detected at line 95
 []\OT1/cmr/m/n/8 8:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 94
+Underfull \hbox (badness 10000) detected at line 96
 []\OT1/cmr/m/n/8 9:[]
  []
 
@@ -344,99 +344,99 @@ Non-PDF special ignored!
 
 
 ]
-Overfull \hbox (9.47592pt too wide) in paragraph at lines 110--127
+Overfull \hbox (9.47592pt too wide) in paragraph at lines 112--129
  [][] 
  []
 
 <../assets/exact_word_freqs.png, id=20, 361.35pt x 289.08pt>
 File: ../assets/exact_word_freqs.png Graphic file (type png)
 <use ../assets/exact_word_freqs.png>
-Package pdftex.def Info: ../assets/exact_word_freqs.png  used on input line 136.
+Package pdftex.def Info: ../assets/exact_word_freqs.png  used on input line 138.
 (pdftex.def)             Requested size: 222.78355pt x 178.22644pt.
 <../assets/exact_distinct_words.png, id=22, 361.35pt x 289.08pt>
 File: ../assets/exact_distinct_words.png Graphic file (type png)
 <use ../assets/exact_distinct_words.png>
-Package pdftex.def Info: ../assets/exact_distinct_words.png  used on input line 144.
+Package pdftex.def Info: ../assets/exact_distinct_words.png  used on input line 146.
 (pdftex.def)             Requested size: 222.78355pt x 178.22644pt.
 
 
 
-Underfull \hbox (badness 2020) in paragraph at lines 158--159
+Underfull \hbox (badness 2020) in paragraph at lines 160--161
 \OT1/cmr/m/n/10 con-ta-do-res pro-ba-bil^^S^^Psticos, in-ven-ta-dos por Ro-bert
  []
 
 
-Underfull \hbox (badness 10000) detected at line 169
+Underfull \hbox (badness 10000) detected at line 171
 []\OT1/cmr/m/n/8 1:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 170
+Underfull \hbox (badness 10000) detected at line 172
 []\OT1/cmr/m/n/8 2:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 171
+Underfull \hbox (badness 10000) detected at line 173
 []\OT1/cmr/m/n/8 3:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 172
+Underfull \hbox (badness 10000) detected at line 174
 []\OT1/cmr/m/n/8 4:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 173
+Underfull \hbox (badness 10000) detected at line 175
 []\OT1/cmr/m/n/8 5:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 174
+Underfull \hbox (badness 10000) detected at line 176
 []\OT1/cmr/m/n/8 6:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 175
+Underfull \hbox (badness 10000) detected at line 177
 []\OT1/cmr/m/n/8 7:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 176
+Underfull \hbox (badness 10000) detected at line 178
 []\OT1/cmr/m/n/8 8:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 177
+Underfull \hbox (badness 10000) detected at line 179
 []\OT1/cmr/m/n/8 9:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 178
+Underfull \hbox (badness 10000) detected at line 180
 []\OT1/cmr/m/n/8 10:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 179
+Underfull \hbox (badness 10000) detected at line 181
 []\OT1/cmr/m/n/8 11:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 180
+Underfull \hbox (badness 10000) detected at line 182
 []\OT1/cmr/m/n/8 12:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 181
+Underfull \hbox (badness 10000) detected at line 183
 []\OT1/cmr/m/n/8 13:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 182
+Underfull \hbox (badness 10000) detected at line 184
 []\OT1/cmr/m/n/8 14:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 183
+Underfull \hbox (badness 10000) detected at line 185
 []\OT1/cmr/m/n/8 15:[]
  []
 
@@ -451,72 +451,72 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-Underfull \hbox (badness 10000) detected at line 279
+Underfull \hbox (badness 10000) detected at line 281
 []\OT1/cmr/m/n/8 1:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 280
+Underfull \hbox (badness 10000) detected at line 282
 []\OT1/cmr/m/n/8 2:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 281
+Underfull \hbox (badness 10000) detected at line 283
 []\OT1/cmr/m/n/8 3:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 282
+Underfull \hbox (badness 10000) detected at line 284
 []\OT1/cmr/m/n/8 4:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 283
+Underfull \hbox (badness 10000) detected at line 285
 []\OT1/cmr/m/n/8 5:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 284
+Underfull \hbox (badness 10000) detected at line 286
 []\OT1/cmr/m/n/8 6:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 285
+Underfull \hbox (badness 10000) detected at line 287
 []\OT1/cmr/m/n/8 7:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 286
+Underfull \hbox (badness 10000) detected at line 288
 []\OT1/cmr/m/n/8 8:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 287
+Underfull \hbox (badness 10000) detected at line 289
 []\OT1/cmr/m/n/8 9:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 288
+Underfull \hbox (badness 10000) detected at line 290
 []\OT1/cmr/m/n/8 10:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 289
+Underfull \hbox (badness 10000) detected at line 291
 []\OT1/cmr/m/n/8 11:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 290
+Underfull \hbox (badness 10000) detected at line 292
 []\OT1/cmr/m/n/8 12:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 291
+Underfull \hbox (badness 10000) detected at line 293
 []\OT1/cmr/m/n/8 13:[]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 292
+Underfull \hbox (badness 10000) detected at line 294
 []\OT1/cmr/m/n/8 14:[]
  []
 
@@ -525,31 +525,51 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[3] (./report.bbl)
+[3]
+
+<../assets/ss_signcount.png, id=32, 361.35pt x 289.08pt>
+File: ../assets/ss_signcount.png Graphic file (type png)
+<use ../assets/ss_signcount.png>
+Package pdftex.def Info: ../assets/ss_signcount.png  used on input line 342.
+(pdftex.def)             Requested size: 222.78355pt x 178.22644pt.
+
+Overfull \hbox (13.33702pt too wide) in paragraph at lines 375--392
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[4
+[4 <../assets/ss_signcount.png>]
+Overfull \hbox (9.47592pt too wide) in paragraph at lines 402--419
+ [][] 
+ []
 
-] (./report.aux)
+
+
+(./report.bbl)
+
+[5] (./report.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6239 strings out of 473579
- 104598 string characters out of 5728228
+ 6251 strings out of 473579
+ 104937 string characters out of 5728228
  1961957 words of memory out of 5000000
- 29065 multiletter control sequences out of 15000+600000
+ 29077 multiletter control sequences out of 15000+600000
  565315 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,15n,79p,816b,410s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on report.pdf (4 pages, 1378669 bytes).
+Output written on report.pdf (5 pages, 1714743 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 122 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -70,6 +70,8 @@ Numa primeira fase, os ficheiros de texto descarregados a partir do \textit{Proj
 
 implementar algortimos, analise dos dados, correr ns quantas vezes, .....
 
+numero total de palavras que cada book tem ? n = ?
+
 
 \section{Contadores Exatos}
 
@@ -198,18 +200,18 @@ nas tabelas seguintes, por ser um processo aleatorio, apos tere sudo corrido 20 
 \label{table:top10_aprox_ingles}
 \begin{tabular}{lrrr|r}
 \toprule
-Palavra & $\text{\#}_{\text{médio}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{real}}$ \\
+Palavra & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{média}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{real}}$ \\
 \midrule
-pinocchio & 439 & 544 & 336 & 457 \\
-say & 270 & 400 & 96 & 282 \\
-little & 227 & 320 & 144 & 238 \\
-puppet & 223 & 336 & 128 & 209 \\
-come & 148 & 240 & 64 & 141 \\
-boy & 140 & 176 & 80 & 140 \\
-\textcolor{orange}{go} & 132 & 240 & 48 & 116 \\
-\textcolor{orange}{poor} & 129 & 240 & 48 & 127 \\
-\textcolor{orange}{like} & 128 & 192 & 32 & 133 \\
-\textcolor{orange}{good} & 126 & 224 & 64 & 131 \\
+pinocchio & 336 & 439 & 544 & 457 \\
+say & 96 & 270 & 400 & 282 \\
+little & 144 & 227 & 320 & 238 \\
+puppet & 128 & 223 & 336 & 209 \\
+come & 64 & 148 & 240 & 141 \\
+boy & 80 & 140 & 176 & 140 \\
+\textcolor{orange}{go} & 48 & 132 & 240 & 116 \\
+\textcolor{orange}{poor} & 48 & 129 & 240 & 127 \\
+\textcolor{orange}{like} & 32 & 128 & 192 & 133 \\
+\textcolor{orange}{good} & 64 & 126 & 224 & 131 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -220,18 +222,18 @@ boy & 140 & 176 & 80 & 140 \\
 \label{table:top10_aprox_italiano}
 \begin{tabular}{lrrr|r}
 \toprule
-Palavra & $\text{\#}_{\text{médio}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{real}}$ \\
+Palavra & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{média}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{real}}$ \\
 \midrule
-pinocchio & 439 & 544 & 240 & 460 \\
-il & 379 & 512 & 224 & 386 \\
-dire & 263 & 448 & 160 & 282 \\
-si & 252 & 320 & 128 & 251 \\
-burattino & 223 & 320 & 96 & 225 \\
-volere & 169 & 256 & 96 & 167 \\
-\textcolor{orange}{povero} & 139 & 240 & 32 & 134 \\
-\textcolor{red}{bello} & 133 & 240 & 80 & 116 \\
-\textcolor{orange}{vedere} & 131 & 192 & 32 & 152 \\
-\textcolor{orange}{andare} & 127 & 192 & 80 & 134 \\
+pinocchio & 240 & 439 & 544 & 460 \\
+il & 224 & 379 & 512 & 386 \\
+dire & 160 & 263 & 448 & 282 \\
+si & 128 & 252 & 320 & 251 \\
+burattino & 96 & 223 & 320 & 225 \\
+volere & 96 & 169 & 256 & 167 \\
+\textcolor{orange}{povero} & 32 & 139 & 240 & 134 \\
+\textcolor{red}{bello} & 80 & 133 & 240 & 116 \\
+\textcolor{orange}{vedere} & 32 & 131 & 192 & 152 \\
+\textcolor{orange}{andare} & 80 & 127 & 192 & 134 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -242,18 +244,18 @@ volere & 169 & 256 & 96 & 167 \\
 \label{table:top10_aprox_finlandes}
 \begin{tabular}{lrrr|r}
 \toprule
-Palavra & $\text{\#}_{\text{médio}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{real}}$ \\
+Palavra & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{média}}$ & $\text{\#}_{\text{max}}$ & $\text{\#}_{\text{real}}$ \\
 \midrule
-pinocchio & 445 & 672 & 320 & 443\\
-sanoa & 266 & 352 & 160 & 258 \\
-saada & 160 & 256 & 48 & 143 \\
-\textcolor{orange}{tehdä} & 136 & 224 & 48 & 134 \\
-\textcolor{orange}{marionetti} & 132 & 224 & 80 & 131 \\
-\textcolor{orange}{alkaa} & 104 & 160 & 64 & 134 \\
-\textcolor{red}{geppetto} & 87 & 160 & 32 & 71 \\
-huutaa & 86 & 128 & 32 & 81 \\
-\textcolor{red}{pää} & 80 & 128 & 32 & 65 \\
-\textcolor{red}{olla} & 76 & 144 & 16 & 61 \\
+pinocchio & 320 & 445 & 672 & 443 \\
+sanoa & 160 & 266 & 352 & 258 \\
+saada & 48 & 160 & 256 & 143 \\
+\textcolor{orange}{tehdä} & 48 & 136 & 224 & 134 \\
+\textcolor{orange}{marionetti} & 80 & 132 & 224 & 131 \\
+\textcolor{orange}{alkaa} & 64 & 104 & 160 & 134 \\
+\textcolor{red}{geppetto} & 32 & 87 & 160 & 71 \\
+huutaa & 32 & 86 & 128 & 81 \\
+\textcolor{red}{pää} & 32 & 80 & 128 & 65 \\
+\textcolor{red}{olla} & 16 & 76 & 144 & 61 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -263,7 +265,7 @@ nota se mais erros quanto menor é a contagem, pq ha maior densidade de palavras
 
 \section{Contadores Space-Saving}
 
-Pelo facto de muitos processos de geração de dados poderem ser modelados como fluxos de dados, que produzem enormes quantidades de informações simples isoladamente, mas que, em conjunto, formam um todo complexo, torna-se interessante a utilização de métodos que respondam rapidamente a cada nova informação e utilizem recursos muito pequenos em comparação com o volume total de dados. Neste contexto, o algoritmo de contagem \textit{Space-Saving} é uma solução eficiente para a identificação de itens frequentes em \textit{streams} de dados, permitindo acompanhar contagens frequentes de forma eficiente, mesmo sob restrições de memória \cite{CG09}.
+Pelo facto de muitos processos de geração de dados poderem ser modelados como fluxos de dados, que produzem enormes quantidades de informações simples isoladamente, mas que, em conjunto, formam um todo complexo, torna-se interessante a utilização de métodos que respondam rapidamente a cada nova informação e utilizem recursos muito pequenos em comparação com o volume total de dados. Neste contexto, o algoritmo de contagem \textit{Space-Saving} é uma solução eficiente para a identificação de itens frequentes em \textit{streams} de dados, permitindo acompanhar contagens frequentes de forma eficiente, mesmo sob restrições de memória (número máximo de diferentes palavras a manter, $k$) \cite{CG09}.
 
 Este algoritmo é exposto no pseudocódigo seguinte:
 
@@ -293,18 +295,153 @@ Este algoritmo é exposto no pseudocódigo seguinte:
 \end{algorithmic}
 \end{algorithm}
 
-dizer limitacoes
+ao aplicar o algortimo aos dados ...
 
-apresentar resultados
+\begin{table}[H]
+\centering
+\caption{CAPTION top10 com space saving 10 para os idiomas ingles e finlandes}
+\label{table:top10_ss10}
+\begin{tabular}{lr|lr}
+\toprule
+\multicolumn{2}{c}{EN} & \multicolumn{2}{c}{FI} \\
+Palavra & \# & Palavra & \# \\
+\midrule
+boy & 1714 & poja & 1808 \\
+time & 1713 & tyytyväinen & 1807 \\
+say & 1713 & olinpa & 1807 \\
+great & 1713 & sentään & 1807 \\
+complacency & 1713 & hullunkurinen & 1807 \\
+ridiculous & 1713 & näköinen & 1807 \\
+puppet & 1713 & marionetti & 1807 \\
+glad & 1713 & onnellinen & 1807 \\
+behave & 1713 & muuttua & 1807 \\
+little & 1713 & oikeaksi & 1807 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-....
+
+
+quando o k é 10, ve se que todos os valores têm o mesmo valor aproximadamente, o que nao corresponde a realidade, tanto para os resultados dos idiomas apresentados, como para o italiano. isto deve se ao facto de o k ser muito pequeno, e como tal, o algoritmo nao consegue manter a contagem de todas as palavras.
+
+
+- https://www.vldb.org/pvldb/vol15/p1215-zhao.pdf
+
+- All items whose true count is > n / k are stored ! : n = total number of items, k = number of counters (k = 20 n chega)
+
+- Smallest count min cannot be larger than e x n: IMPLICA AUMENTAR O K ? SIM!!!!
+
+fazer em \% a qnt de k pq é normal ser maior e tal, mas meter o grafico a explicar, posso meter o k = 5 para mostrar os maus resultados e tal e dps meto o grafico e mostro a escolha e tudo mais bla bla
+
+importante dizer q contagens significativas sao aquelas q nao esta tao proximas da media por causa da situacao do n/k +- 1\%
+
+MOSTRAR GRAFICO E DIZER Q OSAO OS PONTINHOS E Q A LINHA É TP OS 10 SIGNIFICATIVOS, O QUE É O MAIS RELEVANTE QUE PQ A ANALISE ESTA MAIORITARIAMENTE FOCADA NO TOP 10
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.45\textwidth]{../assets/ss_signcount.png}
+    \caption{qnt de palavras significataivas em funcao de k para o idioma italiano}
+    \label{fig:meaningful_wordscount_k}
+\end{figure}
+
+falar tbm das percentagens q estao em cima e q, q mostram q o k é bem menor q o numero total de palavras
+
+...
+
+apos analise do valor minimo de k para que haja uma contagem significativa maior que 10, foi observarvado os seguintes valores minimos
+
+\begin{table}[H]
+\centering
+\caption{CAPTION s}
+\label{table:min_k_for_SStop10}
+\begin{tabular}{rr|rr|rr}
+\toprule
+\multicolumn{2}{c}{EN} & \multicolumn{2}{c}{IT} & \multicolumn{2}{c}{FI} \\
+$k$ & $k/n$ & $k$ & $k/n$ & $k$ & $k/n$ \\
+\midrule
+$59$ & $0.344\%$ & $61$ & $0.309\%$ & $67$ & $0.371\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+como todos os valores, tanto de k sao proximos, de modo a garantir uma certa coerencia ou igualdade ou criterio na comapracao dos resultados, sera aplicado o space savving a todos os livros com k = 70, visto não ser um valor significativo de memoria e ser suficiente para garantir uma contagem significativa de palavras para os 3 livros
+
+para k = 70 temos (falta meter cores e resultado real? SE O TOP10 ESTIVER CERTO, METER COR NA CONTAGEM COM BASE NO DESVIO ABSOLUTO)
+
+\begin{table}[H]
+\centering
+\caption{CAPTION top10 palavras do SS70}
+\label{table:top10_ss70}
+\begin{tabular}{lr|lr|lr}
+\toprule
+\multicolumn{2}{c}{EN} & \multicolumn{2}{c}{IT} & \multicolumn{2}{c}{FI} \\
+Palavra & \# & Palavra & \# & Palavra & \# \\
+\midrule
+pinocchio & 457 & pinocchio & 466 & pinocchio & 443 \\
+say & 288 & il & 389 & sanoa & 266 \\
+little & 270 & dire & 283 & pieni & 257 \\
+good & 244 & burattino & 283 & geppetto & 257 \\
+snail & 243 & pesce & 280 & ihmeellinen & 256 \\
+fairy & 243 & si & 279 & isä & 256 \\
+new & 242 & ragazzo & 279 & vanha & 256 \\
+boy & 242 & ciuchino & 279 & istua & 256 \\
+look & 242 & geppetto & 278 & pää & 256 \\
+geppetto & 242 & fata & 278 & äkkinäinen & 256 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+os resultados n foram os mlhores, ainda ha confusao ali e talvez paavras nao significativas, pelo que eventualmente podem ser procuradas melhores formas em vez do intervalo em torno da media, mas reparase numa melgoria substancial face ao ss5
+
+assim, de forma empirica, foi selecionado um k = 150
+
+\begin{table}[H]
+\centering
+\caption{CAPTION top10 palavras do SS150}
+\label{table:top10_ss150}
+\begin{tabular}{lr|lr|lr}
+\toprule
+\multicolumn{2}{c}{EN} & \multicolumn{2}{c}{IT} & \multicolumn{2}{c}{FI} \\
+Palavra & \# & Palavra & \# & Palavra & \# \\
+\midrule
+pinocchio & 457 & pinocchio & 461 & pinocchio & 443 \\
+say & 284 & il & 386 & sanoa & 261 \\
+little & 239 & dire & 282 & saada & 143 \\
+puppet & 209 & si & 251 & marionetti & 138 \\
+boy & 150 & burattino & 225 & alkaa & 136 \\
+come & 145 & volere & 168 & tehdä & 135 \\
+good & 135 & vedere & 152 & isä & 128 \\
+donkey & 134 & ragazzo & 145 & pieni & 121 \\
+like & 133 & bello & 138 & päivä & 119 \\
+go & 129 & andare & 137 & pois & 119 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+observa se uma melhoria substancial nos resultados, principalemnte relativamente ao idioma ingles. idiomas como o finalndes n tiveram uma melhoria tao significativa, mas ainda assim, a contagem é mais precisa e mais proxima da realidade. esta melhoria nao tao significata para a FI deve se a maior quantiade de palavras distintas, o que torna mais dificil a contagem de palavras significativas, mesmo com um k maior e tambem por causa da contagem mais proxima das palavras q estao mais baixo no rank do top 10
+
+isto releva.... (trade off, limitacoes, etc, cada caso, testes de varios k,....)
 
 
 \section{Resultados}
 
+- NAO TE PREOCUPES TANTO COM COMPLEXIDADE ESPACIAL, TENS DE TER MAIS EM CONTA OS BYTES... talvez fazer analise de bytes dentro de cada seccao e dps no fim fazer uma tabela 
+
 ou comparacao dos metodos ou assim
 
+- aa - ver erros e isso nos resultados das contagens, de forma quantificada e grafica se der
 
+- analysis of the computational efficiency and limitations of the developed approaches ()
+
+    - absolute and relative errors (lowest value, highest value, average value, etc.)
+
+    - evaluate the quality of estimates
+
+    - same most frequent / less frequent words are identified, and in the same relative order
+
+    - most frequent / less frequent words are similar in the text files of the same book in different language
+
+    - Compare the performance between themselves and regarding the exact counts.
 
 
 \section{Conclusão}
