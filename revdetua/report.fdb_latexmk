@@ -1,17 +1,17 @@
 # Fdb version 4
-["bibtex report"] 1734826096.65192 "report.aux" "report.bbl" "report" 1734826478.21598 0
+["bibtex report"] 1734826096.65192 "report.aux" "report.bbl" "report" 1734863825.01946 0
   "./p-revdetua.bst" 1326997358 15609 44ecfa447d812c289732ae87d3faed4d ""
   "./refs.bib" 1734301582.52907 1519 38adedb5edcf019ddea7b511281796c9 ""
-  "report.aux" 1734826477.97015 1081 ad01dcd161b19d9258c2316605d29baf "pdflatex"
+  "report.aux" 1734863824.77427 1081 ad01dcd161b19d9258c2316605d29baf "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["pdflatex"] 1734826473.71831 "/Users/hugover/Desktop/AA03/revdetua/report.tex" "report.pdf" "report" 1734826478.2161 0
+["pdflatex"] 1734863820.55783 "/Users/hugover/Desktop/AA03/revdetua/report.tex" "report.pdf" "report" 1734863825.0196 0
   "../assets/exact_distinct_words.png" 1734282713.56647 289422 5bb1dd899da4f77e55ce899f41ae8891 ""
   "../assets/exact_word_freqs.png" 1734282715.42452 955352 34f21df439a3c2cdeadef8f76ed99df4 ""
   "../assets/ss_signcount.png" 1734823723.63554 356884 f677e4d24c874c546a42fa85f8c16180 ""
-  "/Users/hugover/Desktop/AA03/revdetua/report.tex" 1734826473.50886 22920 c1089f8638a659981dc2cb873c358708 ""
+  "/Users/hugover/Desktop/AA03/revdetua/report.tex" 1734863820.3708 23045 0ef04a7eda0369fd726d4686b9c9a05a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -99,9 +99,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724153806 5498206 6c0f03cb370063b7ddbd563e5f9ce23a ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724153954 8239412 02a25d85eb128426e9965e27e7615548 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "report.aux" 1734826477.97015 1081 ad01dcd161b19d9258c2316605d29baf "pdflatex"
+  "report.aux" 1734863824.77427 1081 ad01dcd161b19d9258c2316605d29baf "pdflatex"
   "report.bbl" 1734826096.75679 874 a0e0825dea9c1999282df0666339d996 "bibtex report"
-  "report.tex" 1734826473.50886 22920 c1089f8638a659981dc2cb873c358708 ""
+  "report.tex" 1734863820.3708 23045 0ef04a7eda0369fd726d4686b9c9a05a ""
   "revdetua.cls" 1348080372 24164 8b1d9d26252f6b3f92c4a1888d855feb ""
   (generated)
   "report.aux"
