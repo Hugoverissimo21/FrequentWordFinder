@@ -408,7 +408,7 @@ FI &1332984 & 884776 & 8176 & 20000 & 35888 \\
 
 Observa-se que o algoritmo de contagem exata é o que requer uma maior quantidade de memória, uma vez que necessita de manter a contagem exata de todas as palavras, o que implica uma maior quantidade de informação a ser guardada. Por outro lado, os algoritmos de contagem aproximada e \textit{Space-Saving} requerem uma menor quantidade de memória, uma vez que utilizam técnicas probabilísticas e de limitação de memória, respetivamente, para manter as contagens de palavras. Particularmente, o algoritmo de contagem \textit{Space-Saving} é o que apresenta uma menor quantidade de memória alocada, substancialmente, uma vez que mantém apenas as contagens de $k$ palavras, sendo que a memória alocada aumenta com o aumento de $k$.
 
-\subsection{Análise de RANKS ?} % mudar nome subsection
+\subsection{Análise da Classicação das Palavras Frequentes}
 
 Tendo em conta que ao longo deste relatório foram apresentadas as 10 palavras mais frequentes em cada um dos livros e respetivas contagens, com base na aplicação dos diferentes algoritmos, torna-se interessante a análise da posição de cada palavra, tendo em conta a contagem, em cada um dos algoritmos, para cada um dos livros em análise.
 
@@ -433,7 +433,7 @@ good & 8 & 10 & - & 4 & 7 \\
 poor & 9 & 8 & - & - & 11 \\
 go & 10 & 7 & - & 11 & 10 \\
 \midrule
-Corretos & 10 & 6 & 0 & 3 & 5 \\
+Corretas & 10 & 6 & 0 & 3 & 5 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -457,7 +457,7 @@ andare & 8 & 10 & - & - & 10 \\
 povero & 9 & 7 & - & - & 12 \\
 ragazzo & 10 & 12 & - & 7 & 8 \\
 \midrule
-Corretos & 10 & 6 & 0 & 3 & 7 \\
+Corretas & 10 & 6 & 0 & 3 & 7 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -481,23 +481,26 @@ huutaa & 8 & 8 & - & - & 135 \\
 nähdä & 9 & 12 & - & - & 13 \\
 kysyä & 10 & 11 & - & - & 14 \\
 \midrule
-Corretos & 10 & 3 & 0 & 2 & 3 \\
+Corretas & 10 & 3 & 0 & 2 & 3 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-AQUI AQUI AQUI
+É possível verificar um desempenho semelhante dos algoritmos entre os diferentes idiomas, apesar do idioma finlandês apresentar um desempenho ligeiramente inferior, o que pode ser justificado pela maior quantidade de palavras distintas, como foi verificado na análise da contagem exata (Fig. \ref{fig:distinc_words}). Para além disso, também se observa um mau resultado dos algoritmos de \textit{Space-Saving} com $k = 10$ e $k = 70$, um resultado satisfatório com os algoritmos de contagem aproximada e \textit{Space-Saving} com $k = 150$, e um resultado perfeito com o algoritmo de contagem exata.
 
-lalal ocnclusao destas tableas
+Sendo que estes últimos algoritmos são os que apresentam um maior requesito de memória, verifica-se a presença de um equilíbrio entre o desempenho das contagens e a sua eficiência espacial, o que é um fator importante a ter em conta na escolha do algoritmo a utilizar.
 
-\subsection{analise de precisao?}
+\subsection{Análise de Precisão}
 
-- evaluate the quality of estimates
-
+De forma a avaliar a precisão das contagens obtidas com a aplicação dos diferentes algoritmos, foi realizada uma análise ao erro relativo, dado por
+$$
+\frac{\sum^{10}_{\text{Palavra} = 1} | \text{Cont.Est.}_{\text{Palavra}} - \text{Cont.Real}_{\text{Palavra}} | }{\sum^{10}_{\text{Palavra} = 1} \text{Cont.Real}_{\text{Palavra}}\ /\ 10}
+$$
+para cada um dos diferentes algoritmos e livros em análise. É de notar que este erro apenas considera as 10 palavras mais frequentes de cada livro, uma vez que estas são as mais importantes para a análise, e pelo facto do algoritmo de \textit{Space-Saving}, com $k = 10$, apenas manter as contagens de 10 palavras. A Tabela \ref{table:erro_relativo} apresenta os resultados referentes a esta análise.
 
 \begin{table}[H]
 \centering
-\caption{CAPTION CAPTION}
+\caption{Erro relativo das contagens obtidas com a aplicação dos diferentes algoritmos, para cada livro.}
 \label{table:erro_relativo}
 \begin{tabular}{lrrrrr}
 \toprule
@@ -510,12 +513,7 @@ FI & 0.000 & 0.078 & 2.179 & 0.757 & 0.198 \\
 \end{tabular}
 \end{table}
 
-
-3. Relative Error (or Percentage Error)
-Measures the average relative error, scaled to the size of the true counts.
-menor melhor
-erro so para o top10 pq é oq importa mais e tornaria impossivel comprar o SS10 e os outros ss todos
-
+Observa-se que o algoritmo de contagem exata é o que apresenta um menor erro relativo, uma vez que mantém a contagem exata de todas as palavras, o que permite uma maior precisão. Por outro lado, os algoritmos de contagem aproximada e \textit{Space-Saving} apresentam um erro relativo superior, uma vez que utilizam técnicas probabilísticas e de limitação de memória, respetivamente, para manter as contagens de palavras, o que implica uma menor precisão. Particularmente, o algoritmo de contagem \textit{Space-Saving} é o que apresenta um maior erro relativo, quando tem um menor valor de $k$, uma vez que mantém apenas as contagens de $k$ palavras, levando a uma menor precisão.
 
 \section{Conclusão}
 
