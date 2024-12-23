@@ -1,16 +1,5 @@
 \documentclass[mirror, portugues]{revdetua}
 
-% Valid options are:
-%   portugues --------- main language is Portuguese
-%   final ------------- final version (default)
-%   times ------------- use times (postscript) fonts for text
-%   mirror ------------ prints a mirror image of the paper (with dvips)
-%   visiblelabels ----- \SL, \SN, \SP, \EL, \EN, etc. defined
-%   invisiblelabels --- \SL, \SN, \SP, \EL, \EN, etc. not defined (default)
-%
-% Note: the final version should use the times fonts
-% Note: the really final version should also use the mirror option
-
 \usepackage[portuguese]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath} 
@@ -28,9 +17,6 @@
 % Recipe: xelatex
 % Recipe: pdflatex -> bibtex -> pdflatex -> pdflatex
 % Recipe: xelatex
-%
-% notas:
-% rever se algoritmos e imagens estão onde devem
 %-------------------------------------
 \begin{document}
 
@@ -41,13 +27,14 @@
 \maketitle
 
 \begin{abstract}
-abstrato em ingles
+This report presents a comparative analysis of word frequency in three translations of the book \textit{Pinocchio: The Tale of a Puppet} by Carlo Collodi, in English, Italian, and Finnish. Three word-counting algorithms were applied: an exact counter, an approximate counter, and three \textit{Space-Saving} counters ($k = 10, 70, 150$), aiming to identify the most frequent words in each translation. The results reveal similarities among the translations, as well as the spatial efficiency and accuracy of the algorithms used. Additionally, the findings highlight a balance between spatial efficiency and counting accuracy, with the exact counter offering the highest accuracy but the greatest memory consumption, while the approximate and \textit{Space-Saving} counters exhibit lower accuracy but significantly reduced memory usage.
 \end{abstract}
 
 \begin{resumo}
-abstrato em pt resumo ;; rever se codigo de cores esta tudo certo
+Este relatório apresenta uma análise comparativa da frequência de palavras em três traduções do livro \textit{As Aventuras de Pinóquio}, de Carlo Collodi, em inglês, italiano e finlandês. Foram aplicados três algoritmos de contagem de palavras, nomeadamente um contador exato, um contador aproximado e três contadores \textit{Space-Saving} ($k = 10, 70, 150$), com o objetivo de identificar as palavras mais frequentes em cada tradução. Os resultados obtidos revelam semelhanças entre as traduções, bem como a eficiência espacial e precisão dos algoritmos utilizados. Para além disso também se encontra a presença de um equilíbrio entre a eficiência espacial e a precisão das contagens, sendo que o contador exato apresenta a maior precisão, mas também o maior consumo de memória, enquanto que os contadores aproximados e \textit{Space-Saving} apresentam uma precisão menor, mas um menor consumo de memória.
 \end{resumo}
 
+\textbf{;; rever se codigo de cores esta tudo certo}
 
 \section{Introdução}
 
@@ -61,13 +48,11 @@ Assim, este relatório visa explorar três abordagens para este problema: contad
 
 Para realizar a análise de frequência de palavras, foram selecionados três livros, a partir livraria online \textit{Project Gutenberg} \cite{PG24}, nomeadamente: \textit{Pinocchio: The Tale of a Puppet} (em inglês, EN), \textit{Le avventure di Pinocchio: Storia di un burattino} (em italiano, IT) e \textit{Pinocchion seikkailut: Kertomus marioneteista} (em finlandês, FI). Estes livros foram selecionados por serem traduções do mesmo livro original, conhecido em português como \textit{As Aventuras de Pinóquio}, de Carlo Collodi, permitindo para além de uma comparação da frequência de palavras em diferentes idiomas, uma análise de semelhanças e diferenças entre as traduções.
 
-% numero total de palavras que cada book tem ? n = ?
-
 Numa primeira fase, os ficheiros de texto descarregados a partir do \textit{Project Gutenberg} foram processados removendo informações irrelevantes, como metadados e licenças, palavras insignificantes e sinais de pontuação. Para além disso todas as palavras foram convertidas para minúsculas e lematizadas. Estas transformações são fundamentais, de modo a simplificar o texto e concentrar a análise nas palavras mais relevantes, garantindo uma avaliação mais precisa e eficiente da frequência de termos. É importante referir que estas transformações foram realizadas com recurso à biblioteca \textit{spaCy}, através do \textit{Python}.
 
 Posteriormente, foram implementadas as abordagens referidas anteriormente, nomeadamente contadores exatos, contadores aproximados e identificação de itens frequentes em \textit{streams} de dados, com o objetivo de identificar as 10 palavras mais frequentes em cada um dos livros em análise.
 
-Por fim, foram realizadas análises comparativas entre os resultados obtidos com as diferentes abordagens, nomeadamente em termos de .... !!! % precisão, eficiência e consumo de memória, de modo a identificar as vantagens e desvantagens de cada método.
+Por fim, foram realizadas análises comparativas entre os resultados obtidos com as diferentes abordagens, nomeadamente a comparação da classificação das palavras mais frequentes, a precisão das contagens e a eficiência espacial dos algoritmos.
 
 Atendendo a estas últimas fases, estas serão apresentadas em detalhe nas secções seguintes, com a apresentação dos resultados obtidos e a respetiva análise.
 
@@ -352,7 +337,7 @@ little & 270 & dire & 283 & \textcolor{red}{pieni} & 257 \\
 
 Pelo facto dos resultados obtidos com o algoritmo de contagem \textit{Space-Saving} com $k = 70$ não serem suficientemente precisos, devido ao valor de $k$ e por existirem várias contagens muito próximas, nas 10 palavras mais frequentes, pode-se concluir que a medida de contagens significativas poderá ter de ser melhorada, possivelmente aumentando a distância que determina a significância de uma contagem.
 
-Não sendo a determinação desta medida o foco deste estudo, foi selecionado empiricamente um valor de $k = 150$, para ...... Na Tabela \ref{table:top10_ss150} são apresentadas as 10 palavras mais frequentes em cada um dos livros, com base na aplicação do algoritmo com $k = 150$, juntamente com a sua contagem estimada, e um código de cores nas palavras, com a mesma finalidade que anteriormente. % POR ACABAR A RAZÃO: RESULTADOS MELHORES E Q ...
+Não sendo a determinação desta medida o foco deste estudo, foi selecionado empiricamente um valor de $k = 150$, tendo em vista uma melhoria na precisão das contagens. Na Tabela \ref{table:top10_ss150} são apresentadas as 10 palavras mais frequentes em cada um dos livros, com base na aplicação do algoritmo com $k = 150$, juntamente com a sua contagem estimada, e um código de cores nas palavras, com a mesma finalidade que anteriormente.
 
 \begin{table}[H]
 \centering
