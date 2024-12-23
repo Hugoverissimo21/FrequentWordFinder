@@ -383,31 +383,6 @@ Isto revela que quanto maior o valor de $k$, maior a precisão das contagens, no
 
 \section{Resultados}
 
-TALVEZ MUDAR A ORDEM DAS ANALISES ??? % mudar ordem analises ?
-
-\subsection{Análise de Memória}
-
-Sendo a componente espacial um dos fatores mais importantes na análise de algoritmos de contagem, torna-se fundamental uma análise da quantidade de memória utilizada por cada um dos algoritmos em análise.
-
-Para tal, foi realizada uma comparação da memória alocada para manter as contagens de palavras, para cada um dos algoritmos e livros em análise. A Tabela \ref{table:memoria} apresenta esta comparação, tendo sido a memória medida em \textit{bytes}, através da função \textit{asizeof}, do pacote \textit{pympler}, do \textit{Python}.
-
-\begin{table}[H]
-\centering
-\caption{Memória utilizada por cada algoritmo, em \textit{bytes}, para cada livro.}
-\label{table:memoria}
-\begin{tabular}{lrrrrr}
-\toprule
-& Exato & Aprox. & SS10 & SS70 & SS150 \\
-\midrule
-EN & 525112 & 359432 & 7984 & 18832 & 33264 \\
-IT & 865568 & 572312 & 8064 & 18992 & 33664 \\
-FI &1332984 & 884776 & 8176 & 20000 & 35888 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Observa-se que o algoritmo de contagem exata é o que requer uma maior quantidade de memória, uma vez que necessita de manter a contagem exata de todas as palavras, o que implica uma maior quantidade de informação a ser guardada. Por outro lado, os algoritmos de contagem aproximada e \textit{Space-Saving} requerem uma menor quantidade de memória, uma vez que utilizam técnicas probabilísticas e de limitação de memória, respetivamente, para manter as contagens de palavras. Particularmente, o algoritmo de contagem \textit{Space-Saving} é o que apresenta uma menor quantidade de memória alocada, substancialmente, uma vez que mantém apenas as contagens de $k$ palavras, sendo que a memória alocada aumenta com o aumento de $k$.
-
 \subsection{Análise da Classicação das Palavras Frequentes}
 
 Tendo em conta que ao longo deste relatório foram apresentadas as 10 palavras mais frequentes em cada um dos livros e respetivas contagens, com base na aplicação dos diferentes algoritmos, torna-se interessante a análise da posição de cada palavra, tendo em conta a contagem, em cada um dos algoritmos, para cada um dos livros em análise.
@@ -515,9 +490,38 @@ FI & 0.000 & 0.078 & 2.179 & 0.757 & 0.198 \\
 
 Observa-se que o algoritmo de contagem exata é o que apresenta um menor erro relativo, uma vez que mantém a contagem exata de todas as palavras, o que permite uma maior precisão. Por outro lado, os algoritmos de contagem aproximada e \textit{Space-Saving} apresentam um erro relativo superior, uma vez que utilizam técnicas probabilísticas e de limitação de memória, respetivamente, para manter as contagens de palavras, o que implica uma menor precisão. Particularmente, o algoritmo de contagem \textit{Space-Saving} é o que apresenta um maior erro relativo, quando tem um menor valor de $k$, uma vez que mantém apenas as contagens de $k$ palavras, levando a uma menor precisão.
 
+\subsection{Análise de Memória}
+
+Sendo a componente espacial um dos fatores mais importantes na análise de algoritmos de contagem, torna-se fundamental uma análise da quantidade de memória utilizada por cada um dos algoritmos em análise.
+
+Para tal, foi realizada uma comparação da memória alocada para manter as contagens de palavras, para cada um dos algoritmos e livros em análise. A Tabela \ref{table:memoria} apresenta esta comparação, tendo sido a memória medida em \textit{bytes}, através da função \textit{asizeof}, do pacote \textit{pympler}, do \textit{Python}.
+
+\begin{table}[H]
+\centering
+\caption{Memória utilizada por cada algoritmo, em \textit{bytes}, para cada livro.}
+\label{table:memoria}
+\begin{tabular}{lrrrrr}
+\toprule
+& Exato & Aprox. & SS10 & SS70 & SS150 \\
+\midrule
+EN & 525112 & 359432 & 7984 & 18832 & 33264 \\
+IT & 865568 & 572312 & 8064 & 18992 & 33664 \\
+FI &1332984 & 884776 & 8176 & 20000 & 35888 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Observa-se que o algoritmo de contagem exata é o que requer uma maior quantidade de memória, uma vez que necessita de manter a contagem exata de todas as palavras, o que implica uma maior quantidade de informação a ser guardada. Por outro lado, os algoritmos de contagem aproximada e \textit{Space-Saving} requerem uma menor quantidade de memória, uma vez que utilizam técnicas probabilísticas e de limitação de memória, respetivamente, para manter as contagens de palavras. Particularmente, o algoritmo de contagem \textit{Space-Saving} é o que apresenta uma menor quantidade de memória alocada, substancialmente, uma vez que mantém apenas as contagens de $k$ palavras, sendo que a memória alocada aumenta com o aumento de $k$.
+
 \section{Conclusão}
 
-conclusaoooo
+Em suma, a análise de diferentes abordagens de contagem de palavras, nomeadamente a contagem exata, a contagem aproximada e a contagem \textit{Space-Saving}, permitiu a verificação da eficiência e precisão de cada qual, tendo em conta diferentes fatores, como a memória alocada, a classificação das palavras mais frequentes e o erro relativo das contagens.
+
+Verificou-se que o algoritmo de contagem exata é o que apresenta uma maior precisão, seguido dos algoritmos de contagem aproximada e \textit{Space-Saving}, com $k = 150$, que apresentam um desempenho próximo, e por fim, os algoritmos de \textit{Space-Saving} com $k = 70$ e $k=10$, que apresentam um desempenho inferior, respetivamente. 
+
+Contudo, também se observou que o algoritmo de contagem exata é o que requer uma maior quantidade de memória, uma vez que necessita de manter a contagem exata de todas as palavras. Por outro lado, os algoritmos de contagem aproximada e \textit{Space-Saving} requerem uma menor quantidade de memória, uma vez que utilizam técnicas probabilísticas e de limitação de memória, respetivamente, para manter as contagens de palavras. Particularmente, o algoritmo de contagem \textit{Space-Saving} é o que apresenta uma menor quantidade de memória alocada, substancialmente, uma vez que mantém apenas as contagens de $k$ palavras, sendo que a memória alocada aumenta com o aumento de $k$.
+
+Assim, é possível concluir que a escolha do algoritmo a utilizar deve ser feita tendo em conta um equilíbrio entre a precisão das contagens e a eficiência espacial do algoritmo, de modo a obter resultados precisos sem comprometer a eficiência do mesmo, pelo que consoante o objetivo da análise, a escolha do algoritmo a utilizar poderá variar.
 
 \bibliography{refs}
 
