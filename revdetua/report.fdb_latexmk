@@ -1,17 +1,17 @@
 # Fdb version 4
-["bibtex report"] 1734902771.32433 "report.aux" "report.bbl" "report" 1734905408.26935 0
+["bibtex report"] 1734916417.63464 "report.aux" "report.bbl" "report" 1734916560.83748 0
   "./p-revdetua.bst" 1326997358 15609 44ecfa447d812c289732ae87d3faed4d ""
   "./refs.bib" 1734901781.12696 2023 9d948ac345d90ae57a43c9dbbee97542 ""
-  "report.aux" 1734905408.00975 1282 edd0b762974bbf61898d866f0575f57a "pdflatex"
+  "report.aux" 1734916560.582 1330 584cb0f58ac585de0f50f960d341bdca "pdflatex"
   (generated)
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["pdflatex"] 1734905403.71341 "/Users/hugover/Desktop/AA03/revdetua/report.tex" "report.pdf" "report" 1734905408.26948 0
+["pdflatex"] 1734916556.296 "/Users/hugover/Desktop/AA03/revdetua/report.tex" "report.pdf" "report" 1734916560.8376 0
   "../assets/exact_distinct_words.png" 1734282713.56647 289422 5bb1dd899da4f77e55ce899f41ae8891 ""
   "../assets/exact_word_freqs.png" 1734282715.42452 955352 34f21df439a3c2cdeadef8f76ed99df4 ""
   "../assets/ss_signcount.png" 1734823723.63554 356884 f677e4d24c874c546a42fa85f8c16180 ""
-  "/Users/hugover/Desktop/AA03/revdetua/report.tex" 1734905403.51702 27494 2d8d6119621323c238fbc4e0e6ffbb73 ""
+  "/Users/hugover/Desktop/AA03/revdetua/report.tex" 1734916556.09662 30998 3e451e4502c0a3d891e7384ad8aaa0e6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm0800.tfm" 1136768653 1536 05df9db6aeccc4eea94fec15c9024f79 ""
@@ -102,9 +102,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724153806 5498206 6c0f03cb370063b7ddbd563e5f9ce23a ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724153954 8239412 02a25d85eb128426e9965e27e7615548 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "report.aux" 1734905408.00975 1282 edd0b762974bbf61898d866f0575f57a "pdflatex"
-  "report.bbl" 1734902771.4281 1170 9341f54b93f8b939d5ccbbedba1c315d "bibtex report"
-  "report.tex" 1734905403.51702 27494 2d8d6119621323c238fbc4e0e6ffbb73 ""
+  "report.aux" 1734916560.582 1330 584cb0f58ac585de0f50f960d341bdca "pdflatex"
+  "report.bbl" 1734916417.72616 1170 9341f54b93f8b939d5ccbbedba1c315d "bibtex report"
+  "report.tex" 1734916556.09662 30998 3e451e4502c0a3d891e7384ad8aaa0e6 ""
   "revdetua.cls" 1348080372 24164 8b1d9d26252f6b3f92c4a1888d855feb ""
   (generated)
   "report.aux"

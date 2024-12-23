@@ -45,7 +45,7 @@ abstrato em ingles
 \end{abstract}
 
 \begin{resumo}
-abstrato em pt resumo
+abstrato em pt resumo ;; rever se codigo de cores esta tudo certo
 \end{resumo}
 
 
@@ -228,7 +228,7 @@ Palavra & $\text{\#}_{\text{min}}$ & $\text{\#}_{\text{média}}$ & $\text{\#}_{\
 pinocchio & 320 & 445 & 672 & 443 \\
 sanoa & 160 & 266 & 352 & 258 \\
 saada & 48 & 160 & 256 & 143 \\
-\textcolor{orange}{tehdä} & 48 & 136 & 224 & 134 \\
+tehdä & 48 & 136 & 224 & 134 \\
 \textcolor{orange}{marionetti} & 80 & 132 & 224 & 131 \\
 \textcolor{orange}{alkaa} & 64 & 104 & 160 & 134 \\
 \textcolor{red}{geppetto} & 32 & 87 & 160 & 71 \\
@@ -352,15 +352,11 @@ little & 270 & dire & 283 & \textcolor{red}{pieni} & 257 \\
 
 Pelo facto dos resultados obtidos com o algoritmo de contagem \textit{Space-Saving} com $k = 70$ não serem suficientemente precisos, devido ao valor de $k$ e por existirem várias contagens muito próximas, nas 10 palavras mais frequentes, pode-se concluir que a medida de contagens significativas poderá ter de ser melhorada, possivelmente aumentando a distância que determina a significância de uma contagem.
 
-AQUI AQUI AQUI AQUI AQUI
-
-
-Não sendo a determinação desta medida o foco deste estudo, foi selecionado empiricamente um valor de $k = 150$, para ......
-
+Não sendo a determinação desta medida o foco deste estudo, foi selecionado empiricamente um valor de $k = 150$, para ...... Na Tabela \ref{table:top10_ss150} são apresentadas as 10 palavras mais frequentes em cada um dos livros, com base na aplicação do algoritmo com $k = 150$, juntamente com a sua contagem estimada, e um código de cores nas palavras, com a mesma finalidade que anteriormente. % POR ACABAR A RAZÃO: RESULTADOS MELHORES E Q ...
 
 \begin{table}[H]
 \centering
-\caption{CAPTION top10 palavras do SS150}
+\caption{Estimativa das 10 palavras mais frequentes, pelo algoritmo de contagem \textit{Space-Saving}, com $k = 150$.}
 \label{table:top10_ss150}
 \begin{tabular}{lr|lr|lr}
 \toprule
@@ -370,35 +366,38 @@ Palavra & \# & Palavra & \# & Palavra & \# \\
 pinocchio & 457 & pinocchio & 461 & pinocchio & 443 \\
 say & 284 & il & 386 & sanoa & 261 \\
 little & 239 & dire & 282 & saada & 143 \\
-puppet & 209 & si & 251 & marionetti & 138 \\
-boy & 150 & burattino & 225 & alkaa & 136 \\
-come & 145 & volere & 168 & tehdä & 135 \\
-good & 135 & vedere & 152 & isä & 128 \\
-donkey & 134 & ragazzo & 145 & pieni & 121 \\
-like & 133 & bello & 138 & päivä & 119 \\
-go & 129 & andare & 137 & pois & 119 \\
+puppet & 209 & si & 251 & \textcolor{orange}{marionetti} & 138 \\
+\textcolor{orange}{boy} & 150 & burattino & 225 & \textcolor{orange}{alkaa} & 136 \\
+\textcolor{orange}{come} & 145 & volere & 168 & \textcolor{orange}{tehdä} & 135 \\
+\textcolor{orange}{good} & 135 & vedere & 152 & \textcolor{red}{isä} & 128 \\
+\textcolor{red}{donkey} & 134 & \textcolor{orange}{ragazzo} & 145 & \textcolor{red}{pieni} & 121 \\
+\textcolor{orange}{like} & 133 & \textcolor{red}{bello} & 138 & \textcolor{red}{päivä} & 119 \\
+go & 129 & \textcolor{orange}{andare} & 137 & \textcolor{red}{pois} & 119 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-observa se uma melhoria substancial nos resultados, principalemnte relativamente ao idioma ingles. idiomas como o finalndes n tiveram uma melhoria tao significativa, mas ainda assim, a contagem é mais precisa e mais proxima da realidade. esta melhoria nao tao significata para a FI deve se a maior quantiade de palavras distintas, o que torna mais dificil a contagem de palavras significativas, mesmo com um k maior e tambem por causa da contagem mais proxima das palavras q estao mais baixo no rank do top 10
+Observa-se que, com o aumento do valor de $k$, a precisão das contagens aumenta significativamente, sendo possível identificar as 10 palavras mais frequentes com maior precisão, em comparação com os resultados obtidos com $k = 70$. No entanto, ainda existem algumas palavras que não estão corretamente posicionadas.
 
-isto releva.... (trade off, limitacoes, etc, cada caso, testes de varios k,....)
-
+Isto revela que quanto maior o valor de $k$, maior a precisão das contagens, no entanto, também maior o uso de memória. Assim, é importante encontrar um equilíbrio entre a precisão das contagens e a eficiência espacial do algoritmo, de modo a obter resultados precisos sem comprometer a eficiência do mesmo.
 
 \section{Resultados}
 
-llalalla
+TALVEZ MUDAR A ORDEM DAS ANALISES ??? % mudar ordem analises ?
 
-\subsection{analise de memoria}
+\subsection{Análise de Memória}
+
+Sendo a componente espacial um dos fatores mais importantes na análise de algoritmos de contagem, torna-se fundamental uma análise da quantidade de memória utilizada por cada um dos algoritmos em análise.
+
+Para tal, foi realizada uma comparação da memória alocada para manter as contagens de palavras, para cada um dos algoritmos e livros em análise. A Tabela \ref{table:memoria} apresenta esta comparação, tendo sido a memória medida em \textit{bytes}, através da função \textit{asizeof}, do pacote \textit{pympler}, do \textit{Python}.
 
 \begin{table}[H]
 \centering
-\caption{analise de memoria, em bytes? para cada alg}
+\caption{Memória utilizada por cada algoritmo, em \textit{bytes}, para cada livro.}
 \label{table:memoria}
 \begin{tabular}{lrrrrr}
 \toprule
-idioma & Exact & Appro & SS10 & SS70 & SS150 \\
+& Exato & Aprox. & SS10 & SS70 & SS150 \\
 \midrule
 EN & 525112 & 359432 & 7984 & 18832 & 33264 \\
 IT & 865568 & 572312 & 8064 & 18992 & 33664 \\
@@ -407,17 +406,21 @@ FI &1332984 & 884776 & 8176 & 20000 & 35888 \\
 \end{tabular}
 \end{table}
 
-\subsection{analise de precisao?}
+Observa-se que o algoritmo de contagem exata é o que requer uma maior quantidade de memória, uma vez que necessita de manter a contagem exata de todas as palavras, o que implica uma maior quantidade de informação a ser guardada. Por outro lado, os algoritmos de contagem aproximada e \textit{Space-Saving} requerem uma menor quantidade de memória, uma vez que utilizam técnicas probabilísticas e de limitação de memória, respetivamente, para manter as contagens de palavras. Particularmente, o algoritmo de contagem \textit{Space-Saving} é o que apresenta uma menor quantidade de memória alocada, substancialmente, uma vez que mantém apenas as contagens de $k$ palavras, sendo que a memória alocada aumenta com o aumento de $k$.
 
-tendo em conta o rank
+\subsection{Análise de RANKS ?} % mudar nome subsection
+
+Tendo em conta que ao longo deste relatório foram apresentadas as 10 palavras mais frequentes em cada um dos livros e respetivas contagens, com base na aplicação dos diferentes algoritmos, torna-se interessante a análise da posição de cada palavra, tendo em conta a contagem, em cada um dos algoritmos, para cada um dos livros em análise.
+
+Nas Tabelas \ref{table:rank10_ing}, \ref{table:rank10_it} e \ref{table:rank10_fi} são apresentadas as 10 palavras mais frequentes em cada um dos livros (EN, IT e FI, respetivamente) e para cada palavra é apresentado a classificação obtida com a aplicação de cada um dos algoritmos. Nas mesmas tabelas, é também apresentado o número de palavras corretamente classificadas, ou seja, que se encontram na posição correta das 10 palavras mais frequentes.
 
 \begin{table}[H]
 \centering
-\caption{ranks top10 para cada alg, em ingles}
+\caption{10 palavras mais frequentes em inglês, com a classificação obtida a partir da aplicação de cada algoritmo.}
 \label{table:rank10_ing}
 \begin{tabular}{lrrrrr}
 \toprule
-word & exact & aprox & ss10 & ss70 & ss150 \\
+Palavra & Exato & Aprox. & SS10 & SS70 & SS150 \\
 \midrule
 pinocchio & 1 & 1 & - & 1 & 1 \\
 say & 2 & 2 & 3 & 2 & 2 \\
@@ -429,17 +432,19 @@ like & 7 & 9 & - & - & 9 \\
 good & 8 & 10 & - & 4 & 7 \\
 poor & 9 & 8 & - & - & 11 \\
 go & 10 & 7 & - & 11 & 10 \\
+\midrule
+Corretos & 10 & 6 & 0 & 3 & 5 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{table}[H]
 \centering
-\caption{ranks top10 para cada alg, em italiano}
+\caption{10 palavras mais frequentes em italiano, com a classificação obtida a partir da aplicação de cada algoritmo.}
 \label{table:rank10_it}
 \begin{tabular}{lrrrrr}
 \toprule
-word & exact & aprox & ss10 & ss70 & ss150 \\
+Palavra & Exato & Aprox. & SS10 & SS70 & SS150 \\
 \midrule
 pinocchio & 1 & 1 & - & 1 & 1 \\
 il & 2 & 2 & - & 2 & 2 \\
@@ -451,18 +456,19 @@ vedere & 7 & 9 & - & - & 7 \\
 andare & 8 & 10 & - & - & 10 \\
 povero & 9 & 7 & - & - & 12 \\
 ragazzo & 10 & 12 & - & 7 & 8 \\
+\midrule
+Corretos & 10 & 6 & 0 & 3 & 7 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-
 \begin{table}[H]
 \centering
-\caption{ranks top10 para cada alg, em finlandes}
+\caption{10 palavras mais frequentes em finlandês, com a classificação obtida a partir da aplicação de cada algoritmo.}
 \label{table:rank10_fi}
 \begin{tabular}{lrrrrr}
 \toprule
-word & exact & aprox & ss10 & ss70 & ss150 \\
+Palavra & Exato & Aprox. & SS10 & SS70 & SS150 \\
 \midrule
 pinocchio & 1 & 1 & - & 1 & 1 \\
 sanoa & 2 & 2 & - & 2 & 2 \\
@@ -474,20 +480,41 @@ poika & 7 & 14 & - & - & 17 \\
 huutaa & 8 & 8 & - & - & 135 \\
 nähdä & 9 & 12 & - & - & 13 \\
 kysyä & 10 & 11 & - & - & 14 \\
+\midrule
+Corretos & 10 & 3 & 0 & 2 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+AQUI AQUI AQUI
+
+lalal ocnclusao destas tableas
+
+\subsection{analise de precisao?}
+
+- evaluate the quality of estimates
+
+
+\begin{table}[H]
+\centering
+\caption{CAPTION CAPTION}
+\label{table:erro_relativo}
+\begin{tabular}{lrrrrr}
+\toprule
+& Exato & Aprox. & SS10 & SS70 & SS150 \\
+\midrule
+EN & 0.000 & 0.047 & 3.571 & 0.598 & 0.026 \\
+IT & 0.000 & 0.043 & 1.000 & 0.561 & 0.019 \\
+FI & 0.000 & 0.078 & 2.179 & 0.757 & 0.198 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 
-- NAO TE PREOCUPES TANTO COM COMPLEXIDADE ESPACIAL, TENS DE TER MAIS EM CONTA OS BYTES... talvez fazer analise de bytes dentro de cada seccao e dps no fim fazer uma tabela 
-
-ou comparacao dos metodos ou assim
-
-- analysis of the computational efficiency and limitations of the developed approaches ()
-
-    - evaluate the quality of estimates
-
-NAS CONTAGENS IGUAIS HA RANKS DIFERENTES, DEVIA METER IGUAL, ACHO Q ISSO SO INTERSSA NA TABELA AGR NA ULTIMA, MAS CONFIRMAR
+3. Relative Error (or Percentage Error)
+Measures the average relative error, scaled to the size of the true counts.
+menor melhor
+erro so para o top10 pq é oq importa mais e tornaria impossivel comprar o SS10 e os outros ss todos
 
 
 \section{Conclusão}
