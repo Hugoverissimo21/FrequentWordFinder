@@ -31,10 +31,8 @@ This report presents a comparative analysis of word frequency in three translati
 \end{abstract}
 
 \begin{resumo}
-Este relatório apresenta uma análise comparativa da frequência de palavras em três traduções do livro \textit{As Aventuras de Pinóquio}, de Carlo Collodi, em inglês, italiano e finlandês. Foram aplicados três algoritmos de contagem de palavras, nomeadamente um contador exato, um contador aproximado e três contadores \textit{Space-Saving} ($k = 10, 70, 150$), com o objetivo de identificar as palavras mais frequentes em cada tradução. Os resultados obtidos revelam semelhanças entre as traduções, bem como a eficiência espacial e precisão dos algoritmos utilizados. Para além disso também se encontra a presença de um equilíbrio entre a eficiência espacial e a precisão das contagens, sendo que o contador exato apresenta a maior precisão, mas também o maior consumo de memória, enquanto que os contadores aproximados e \textit{Space-Saving} apresentam uma precisão menor, mas um menor consumo de memória.
+Este relatório apresenta uma análise comparativa da frequência de palavras em três traduções do livro \textit{As Aventuras de Pinóquio}, de Carlo Collodi, em inglês, italiano e finlandês. Foram aplicados três tipos de algoritmos de contagem de palavras, nomeadamente um contador exato, um contador aproximado e três contadores \textit{Space-Saving} ($k = 10, 70, 150$), com o objetivo de identificar as palavras mais frequentes em cada tradução. Os resultados obtidos revelam semelhanças entre as traduções, bem como a eficiência espacial e precisão dos algoritmos utilizados. Para além disso também se encontra a presença de um equilíbrio entre a eficiência espacial e a precisão das contagens, sendo que o contador exato apresenta a maior precisão, mas também o maior consumo de memória, enquanto que os contadores aproximados e \textit{Space-Saving} apresentam uma precisão menor, mas um menor consumo de memória.
 \end{resumo}
-
-\textbf{;; rever se codigo de cores esta tudo certo}
 
 \section{Introdução}
 
@@ -42,7 +40,7 @@ A análise de texto é uma área de estudo fundamental, com diversas aplicaçõe
 
 Contudo, a identificação precisa da frequência de palavras em textos de larga escala apresenta desafios significativos, especialmente em termos de memória. Métodos de contagem precisa, que mantêm o registo exato da contagem de cada palavra, revelam-se ineficientes devido ao elevado consumo de memória. Há assim a necessidade do estudo de métodos mais eficientes e escaláveis, principalmente em situações em que os dados estão em constante fluxo, como em \textit{streams} de dados. Neste contexto, algoritmos de contagem aproximada e identificação de itens frequentes têm vindo a ganhar destaque, uma vez que permitem a identificação de palavras mais frequentes de forma eficiente e com uma margem de erro controlada \cite{LH06}.
 
-Assim, este relatório visa explorar três abordagens para este problema: contadores exatos, contadores aproximados e identificação de itens frequentes em \textit{streams} de dados.
+Assim, este relatório visa explorar três abordagens para este problema: contadores exatos, contadores aproximados e identificação de itens frequentes em \textit{streams} de dados, através de contadores \textit{Space-Saving}.
 
 \section{Metodologia da Análise}
 
@@ -50,7 +48,7 @@ Para realizar a análise de frequência de palavras, foram selecionados três li
 
 Numa primeira fase, os ficheiros de texto descarregados a partir do \textit{Project Gutenberg} foram processados removendo informações irrelevantes, como metadados e licenças, palavras insignificantes e sinais de pontuação. Para além disso todas as palavras foram convertidas para minúsculas e lematizadas. Estas transformações são fundamentais, de modo a simplificar o texto e concentrar a análise nas palavras mais relevantes, garantindo uma avaliação mais precisa e eficiente da frequência de termos. É importante referir que estas transformações foram realizadas com recurso à biblioteca \textit{spaCy}, através do \textit{Python}.
 
-Posteriormente, foram implementadas as abordagens referidas anteriormente, nomeadamente contadores exatos, contadores aproximados e identificação de itens frequentes em \textit{streams} de dados, com o objetivo de identificar as 10 palavras mais frequentes em cada um dos livros em análise.
+Posteriormente, foram implementadas as abordagens em análise, nomeadamente contadores exatos, contadores aproximados e contadores \textit{Space-Saving}, com o objetivo de identificar as 10 palavras mais frequentes em cada um dos livros em análise.
 
 Por fim, foram realizadas análises comparativas entre os resultados obtidos com as diferentes abordagens, nomeadamente a comparação da classificação das palavras mais frequentes, a precisão das contagens e a eficiência espacial dos algoritmos.
 
@@ -58,8 +56,8 @@ Atendendo a estas últimas fases, estas serão apresentadas em detalhe nas secç
 
 \section{Contadores Exatos}
 
-Quanto aos contadores exatos, tal como o nome indica, este tipo de técnica é exate, resultando numa contagem precisa da frequência de palavras, no contexto em causa.
-O algoritmo apresentado de seguida, designado por \textit{Contador Exato}, é um exemplo de um contador exato, que percorre o texto processado e regista a frequência de cada palavra num dicionário. Este algoritmo é eficiente em termos de precisão, uma vez que mantém um registo exato da contagem de cada palavra, no entanto, revela-se ineficiente em termos de memória, especialmente em situações em que o volume de texto é elevado.
+Quanto aos contadores exatos, tal como o nome indica, este tipo de técnica é exata, resultando numa contagem precisa da frequência de palavras, no contexto em causa.
+O algoritmo apresentado de seguida, designado por \textit{Contador Exato}, é exemplo de um contador exato, que percorre o texto processado e regista a frequência de cada palavra num dicionário. Este algoritmo é eficiente em termos de precisão, uma vez que mantém um registo exato da contagem de cada palavra, no entanto, revela-se ineficiente em termos de memória, especialmente em situações em que o volume de texto é elevado.
 
 \begin{algorithm}[H]
 \raggedright
@@ -80,7 +78,7 @@ O algoritmo apresentado de seguida, designado por \textit{Contador Exato}, é um
 \end{algorithmic}
 \end{algorithm}
 
-Através da aplicacao do algoritmo de contagem exata, foi possível identificar as 10 palavras mais frequentes em cada um dos livros em análise. A Tabela \ref{table:top10_exatos} apresenta as palavras mais frequentes em cada idioma, juntamente com o número de ocorrências de cada palavra (\#).
+Através da aplicação do algoritmo de contagem exata, foi possível identificar as 10 palavras mais frequentes em cada um dos livros em análise. A Tabela \ref{table:top10_exatos} apresenta essas palavras, para cada idioma, juntamente com o número de ocorrências de cada palavra (\#).
 
 \begin{table}[H]
 \centering
@@ -105,9 +103,9 @@ go & 116 & ragazzo & 126 & kysyä & 77 \\
 \end{tabular}
 \end{table}
 
-Como seria de esperar, a palavra "pinocchio" é a mais frequente em todos os idiomas, uma vez que se trata do nome do protagonista do livro. Para além disso, é possível observar algumas semelhanças entre as diferentes traduções, nomeadamente a proximidade das frequências de palavras que têm o mesmo significado entre os idiomas. Por exemplo, as palavras "puppet", "burattino" e "marionetti", que significam marioneta, têm frequências semelhantes nos três idiomas, tal como as que significam rapaz ("boy", "ragazzo" e "poika"), dizer ("say", "dire" e "sanoa"), entre outras.
+Como seria de esperar, a palavra "pinocchio" é a mais frequente em todos os idiomas, uma vez que se trata do nome do protagonista do livro. Para além disso, é possível observar algumas semelhanças entre as diferentes traduções, nomeadamente a proximidade das frequências de palavras que têm o mesmo significado. Por exemplo, as palavras "puppet", "burattino" e "marionetti", que significam marioneta, têm frequências semelhantes nos três idiomas, tal como as que significam rapaz ("boy", "ragazzo" e "poika"), dizer ("say", "dire" e "sanoa"), entre outras.
 
-Ademais, atendendo à análise das palavras menos frequentes, é mais complexo identificar semelhanças entre as traduções, uma vez que a frequência de palavras menos frequentes é muito maior, tornando-se complexa a comparação entre os idiomas. Isto é comprovado pela distribuição da frequência de palavras apresentada na Fig. \ref{fig:word_freqs}, que demonstra um enorme número de palavras cuja contagem pequena. Ainda através da mesma visualização, é possível identificar que a distribuição da frequência de palavras é semelhante entre os diferentes idiomas, com uma grande quantidade de palavras com contagens baixas e uma diminuição exponencial da frequência à medida que a contagem aumenta.
+Ademais, atendendo à análise das palavras menos frequentes, é mais complexo identificar semelhanças entre as traduções, uma vez que a frequência de palavras menos frequentes é muito maior, tornando-se complexa a comparação entre os idiomas. Isto é comprovado pela distribuição da frequência de palavras apresentada na Fig. \ref{fig:word_freqs}, que demonstra um enorme número de palavras cuja contagem é pequena. Ainda através da mesma visualização, é possível identificar que a distribuição da frequência de palavras é semelhante entre os diferentes idiomas, com uma grande quantidade de palavras com contagens baixas e uma diminuição exponencial da frequência à medida que a contagem aumenta.
 
 \begin{figure}[H]
     \centering
@@ -129,7 +127,7 @@ Por fim, ainda através da aplicação do algoritmo de contagem exata, torna-se 
 
 Os contadores aproximados, também conhecidos por contadores probabilísticos, inventados por Robert Morris, são algoritmos especializados em realizar estimativas eficientes de contagens, utilizando quantidades reduzidas de memória em comparação com métodos tradicionais, através de técnicas baseadas em probabilidade. Estes contadores são particularmente úteis em situações em que a precisão exata da contagem não é crítica, permitindo uma redução significativa no uso de memória, sem comprometer a qualidade da análise \cite{RM78}.
 
-Um exemplo de um contador aproximado é o algoritmo de contagem aproximada apresentado de seguida, designado por \textit{Contador Aproximado}. Neste exemplo, o algoritmo utiliza uma probabilidade de contagem fixa de $1/16$, pelo que apenas é estudado um caso particular deste tipo de algoritmos neste relatório. Para cada evento, neste caso, cada palavra do texto, é gerado um número aleatório entre 0 e 1, e a palavra é contada se o número gerado for menor que a probabilidade de contagem. Isto permite que a contagem seja realizada de forma aproximada, com uma margem de erro controlada, e um menor uso de memória.
+Um exemplo de um contador aproximado é o algoritmo de contagem aproximada apresentado de seguida, designado por \textit{Contador Aproximado}. Neste exemplo, o algoritmo utiliza uma probabilidade de contagem fixa de $1/16$, pelo que apenas é estudado um caso particular deste tipo de algoritmos neste relatório. Para cada evento, neste caso, cada palavra do texto, é gerado um número aleatório entre 0 e 1, sendo a palavra contada se o número gerado for menor que a probabilidade de contagem. Isto permite que a contagem seja realizada de forma aproximada, com uma margem de erro controlada e um menor uso de memória.
 
 \begin{algorithm}[H]
 \raggedright
@@ -310,7 +308,7 @@ $59$ & $0.344\%$ & $61$ & $0.309\%$ & $67$ & $0.371\%$ \\
 \end{tabular}
 \end{table}
 
-Pelo facto de todos os valores de $k$ obtidos a partir da análise da tabela anterior serem próximos e não representarem um valor significativo de memória, foi selecionado o valor $k = 70$ para a aplicação do algoritmo de contagem \textit{Space-Saving} a todos os livros em análise. A Tabela \ref{table:top10_ss70} apresenta as 10 palavras mais frequentes em cada um dos livros, com base na aplicação do algoritmo com $k = 70$, juntamente com a sua contagem estimada, e um código de cores nas palavras, que indica se a posição da palavra está correta na ordem das 10 palavras mais frequentes (preto), se está deslocada (laranja), ou se não faz parte das 10 mais frequentes de todo (vermelho).
+Pelo facto de todos os valores de $k$ obtidos a partir da análise da tabela anterior serem próximos e não representarem um valor significativo de memória, foi selecionado o valor $k = 70$ para a aplicação do algoritmo de contagem \textit{Space-Saving} a todos os livros em análise. A Tabela \ref{table:top10_ss70} apresenta as 10 palavras mais frequentes em cada um dos livros, com base na aplicação do algoritmo com $k = 70$, juntamente com a sua contagem estimada, e um código de cores nas palavras, que indica se a posição da palavra está correta na ordem das 10 palavras mais frequentes (preto), se está deslocada (laranja) ou se não faz parte das 10 mais frequentes de todo (vermelho).
 
 \begin{table}[H]
 \centering
@@ -335,9 +333,9 @@ little & 270 & dire & 283 & \textcolor{red}{pieni} & 257 \\
 \end{tabular}
 \end{table}
 
-Pelo facto dos resultados obtidos com o algoritmo de contagem \textit{Space-Saving} com $k = 70$ não serem suficientemente precisos, devido ao valor de $k$ e por existirem várias contagens muito próximas, nas 10 palavras mais frequentes, pode-se concluir que a medida de contagens significativas poderá ter de ser melhorada, possivelmente aumentando a distância que determina a significância de uma contagem.
+Pelo facto dos resultados obtidos com o algoritmo de contagem \textit{Space-Saving} com $k = 70$ não serem suficientemente precisos, devido ao valor de $k$ e por existirem várias contagens muito próximas nas 10 palavras mais frequentes, pode-se concluir que a medida de contagens significativas poderá ter de ser melhorada, possivelmente aumentando a distância que determina a significância de uma contagem.
 
-Não sendo a determinação desta medida o foco deste estudo, foi selecionado empiricamente um valor de $k = 150$, tendo em vista uma melhoria na precisão das contagens. Na Tabela \ref{table:top10_ss150} são apresentadas as 10 palavras mais frequentes em cada um dos livros, com base na aplicação do algoritmo com $k = 150$, juntamente com a sua contagem estimada, e um código de cores nas palavras, com a mesma finalidade que anteriormente.
+Não sendo a determinação desta medida o foco deste estudo, foi selecionado empiricamente um valor de $k = 150$, tendo em vista uma melhoria na precisão das contagens. Na Tabela \ref{table:top10_ss150} são apresentadas as 10 palavras mais frequentes em cada um dos livros, com base na aplicação do algoritmo com $k = 150$, juntamente com a sua contagem estimada, e um código de cores nas palavras, com a mesma finalidade apresentada nas tabelas anteriores.
 
 \begin{table}[H]
 \centering
@@ -370,9 +368,9 @@ Isto revela que quanto maior o valor de $k$, maior a precisão das contagens, no
 
 \subsection{Análise da Classicação das Palavras Frequentes}
 
-Tendo em conta que ao longo deste relatório foram apresentadas as 10 palavras mais frequentes em cada um dos livros e respetivas contagens, com base na aplicação dos diferentes algoritmos, torna-se interessante a análise da posição de cada palavra, tendo em conta a contagem, em cada um dos algoritmos, para cada um dos livros em análise.
+Tendo em conta que ao longo deste relatório foram apresentadas as 10 palavras mais frequentes em cada um dos livros e respetivas contagens, com base na aplicação dos diferentes algoritmos, torna-se interessante a análise da posição de cada palavra em relação à sua posição real.
 
-Nas Tabelas \ref{table:rank10_ing}, \ref{table:rank10_it} e \ref{table:rank10_fi} são apresentadas as 10 palavras mais frequentes em cada um dos livros (EN, IT e FI, respetivamente) e para cada palavra é apresentado a classificação obtida com a aplicação de cada um dos algoritmos. Nas mesmas tabelas, é também apresentado o número de palavras corretamente classificadas, ou seja, que se encontram na posição correta das 10 palavras mais frequentes.
+Nas Tabelas \ref{table:rank10_ing}, \ref{table:rank10_it} e \ref{table:rank10_fi} são apresentadas as 10 palavras mais frequentes em cada uma das traduções (EN, IT e FI, respetivamente) e para cada palavra é apresentada a classificação obtida com a aplicação de cada um dos algoritmos. Nas mesmas tabelas, é também apresentado o número de palavras corretamente classificadas, ou seja, que se encontram na posição correta.
 
 \begin{table}[H]
 \centering
@@ -441,14 +439,12 @@ huutaa & 8 & 8 & - & - & 135 \\
 nähdä & 9 & 12 & - & - & 13 \\
 kysyä & 10 & 11 & - & - & 14 \\
 \midrule
-Corretas & 10 & 3 & 0 & 2 & 3 \\
+Corretas & 10 & 4 & 0 & 2 & 3 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-É possível verificar um desempenho semelhante dos algoritmos entre os diferentes idiomas, apesar do idioma finlandês apresentar um desempenho ligeiramente inferior, o que pode ser justificado pela maior quantidade de palavras distintas, como foi verificado na análise da contagem exata (Fig. \ref{fig:distinc_words}). Para além disso, também se observa um mau resultado dos algoritmos de \textit{Space-Saving} com $k = 10$ e $k = 70$, um resultado satisfatório com os algoritmos de contagem aproximada e \textit{Space-Saving} com $k = 150$, e um resultado perfeito com o algoritmo de contagem exata.
-
-Sendo que estes últimos algoritmos são os que apresentam um maior requesito de memória, verifica-se a presença de um equilíbrio entre o desempenho das contagens e a sua eficiência espacial, o que é um fator importante a ter em conta na escolha do algoritmo a utilizar.
+É possível verificar um desempenho semelhante dos algoritmos entre os diferentes idiomas, apesar do idioma finlandês apresentar um desempenho ligeiramente inferior, o que pode ser justificado pela maior quantidade de palavras distintas, como foi verificado na análise da contagem exata (Fig. \ref{fig:distinc_words}). Para além disso, também se observa um mau resultado dos algoritmos de \textit{Space-Saving} com $k = 10$ e $k = 70$, um resultado satisfatório com os algoritmos de contagem aproximada e \textit{Space-Saving} com $k = 150$ e um resultado perfeito com o algoritmo de contagem exata.
 
 \subsection{Análise de Precisão}
 
@@ -456,7 +452,7 @@ De forma a avaliar a precisão das contagens obtidas com a aplicação dos difer
 $$
 \frac{\sum^{10}_{\text{Palavra} = 1} | \text{Cont.Est.}_{\text{Palavra}} - \text{Cont.Real}_{\text{Palavra}} | }{\sum^{10}_{\text{Palavra} = 1} \text{Cont.Real}_{\text{Palavra}}\ /\ 10}
 $$
-para cada um dos diferentes algoritmos e livros em análise. É de notar que este erro apenas considera as 10 palavras mais frequentes de cada livro, uma vez que estas são as mais importantes para a análise, e pelo facto do algoritmo de \textit{Space-Saving}, com $k = 10$, apenas manter as contagens de 10 palavras. A Tabela \ref{table:erro_relativo} apresenta os resultados referentes a esta análise.
+para cada um dos diferentes algoritmos e livros em análise. É de notar que este erro apenas considera as 10 palavras mais frequentes de cada livro, uma vez que estas são o foco da análise, e pelo facto do algoritmo de \textit{Space-Saving}, com $k = 10$, apenas manter as contagens de 10 palavras. A Tabela \ref{table:erro_relativo} apresenta os resultados referentes a esta análise.
 
 \begin{table}[H]
 \centering
@@ -496,15 +492,17 @@ FI &1332984 & 884776 & 8176 & 20000 & 35888 \\
 \end{tabular}
 \end{table}
 
-Observa-se que o algoritmo de contagem exata é o que requer uma maior quantidade de memória, uma vez que necessita de manter a contagem exata de todas as palavras, o que implica uma maior quantidade de informação a ser guardada. Por outro lado, os algoritmos de contagem aproximada e \textit{Space-Saving} requerem uma menor quantidade de memória, uma vez que utilizam técnicas probabilísticas e de limitação de memória, respetivamente, para manter as contagens de palavras. Particularmente, o algoritmo de contagem \textit{Space-Saving} é o que apresenta uma menor quantidade de memória alocada, substancialmente, uma vez que mantém apenas as contagens de $k$ palavras, sendo que a memória alocada aumenta com o aumento de $k$.
+Observa-se que o algoritmo de contagem exata é o que requer uma maior quantidade de memória, uma vez que necessita de manter a contagem exata de todas as palavras, o que implica uma maior quantidade de informação a ser guardada. Por outro lado, os algoritmos de contagem aproximada e \textit{Space-Saving} requerem uma menor quantidade de memória, uma vez que utilizam técnicas probabilísticas e de limitação de memória, respetivamente, para manter as contagens de palavras. Particularmente, o algoritmo de contagem \textit{Space-Saving} é o que apresenta uma menor quantidade substancial de memória alocada, uma vez que mantém apenas as contagens de $k$ palavras, sendo que a memória alocada aumenta com o aumento de $k$.
 
 \section{Conclusão}
 
-Em suma, a análise de diferentes abordagens de contagem de palavras, nomeadamente a contagem exata, a contagem aproximada e a contagem \textit{Space-Saving}, permitiu a verificação da eficiência e precisão de cada qual, tendo em conta diferentes fatores, como a memória alocada, a classificação das palavras mais frequentes e o erro relativo das contagens.
+Em suma, a análise de diferentes abordagens de contagem de palavras, nomeadamente a contagem exata, a contagem aproximada e a contagem \textit{Space-Saving}, permitiu a verificação da eficiência e precisão de cada qual, tendo em conta diferentes fatores, como a classificação das palavras mais frequentes, o erro relativo das contagens e a memória alocada para manter as contagens de palavras.
 
 Verificou-se que o algoritmo de contagem exata é o que apresenta uma maior precisão, seguido dos algoritmos de contagem aproximada e \textit{Space-Saving}, com $k = 150$, que apresentam um desempenho próximo, e por fim, os algoritmos de \textit{Space-Saving} com $k = 70$ e $k=10$, que apresentam um desempenho inferior, respetivamente. 
 
-Contudo, também se observou que o algoritmo de contagem exata é o que requer uma maior quantidade de memória, uma vez que necessita de manter a contagem exata de todas as palavras. Por outro lado, os algoritmos de contagem aproximada e \textit{Space-Saving} requerem uma menor quantidade de memória, uma vez que utilizam técnicas probabilísticas e de limitação de memória, respetivamente, para manter as contagens de palavras. Particularmente, o algoritmo de contagem \textit{Space-Saving} é o que apresenta uma menor quantidade de memória alocada, substancialmente, uma vez que mantém apenas as contagens de $k$ palavras, sendo que a memória alocada aumenta com o aumento de $k$.
+Contudo, também se observou que são estes últimos algoritmos que apresentam uma menor quantidade de memória alocada, em comparação com os algoritmos de contagem exata e aproximada, que requerem uma maior quantidade de memória.
+
+Estes resultados permitem concluir que, apesar do algoritmo de contagem exata apresentar uma maior precisão, este requer uma maior quantidade de memória, o que pode ser um fator limitante em análises com grandes volumes de dados. Por outro lado, os algoritmos de contagem aproximada e \textit{Space-Saving} apresentam uma menor precisão, mas requerem uma menor quantidade de memória, o que pode ser uma vantagem em análises com grandes volumes de dados.
 
 Assim, é possível concluir que a escolha do algoritmo a utilizar deve ser feita tendo em conta um equilíbrio entre a precisão das contagens e a eficiência espacial do algoritmo, de modo a obter resultados precisos sem comprometer a eficiência do mesmo, pelo que consoante o objetivo da análise, a escolha do algoritmo a utilizar poderá variar.
 
