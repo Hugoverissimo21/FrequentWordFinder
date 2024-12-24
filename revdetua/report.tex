@@ -123,11 +123,11 @@ Por fim, ainda através da aplicação do algoritmo de contagem exata, torna-se 
     \label{fig:distinc_words}
 \end{figure}
 
+
+
 \section{Contadores Aproximados}
 
 Os contadores aproximados, também conhecidos por contadores probabilísticos, inventados por Robert Morris, são algoritmos especializados em realizar estimativas eficientes de contagens, utilizando quantidades reduzidas de memória em comparação com métodos tradicionais, através de técnicas baseadas em probabilidade. Estes contadores são particularmente úteis em situações em que a precisão exata da contagem não é crítica, permitindo uma redução significativa no uso de memória, sem comprometer a qualidade da análise \cite{RM78}.
-
-Um exemplo de um contador aproximado é o algoritmo de contagem aproximada apresentado de seguida, designado por \textit{Contador Aproximado}. Neste exemplo, o algoritmo utiliza uma probabilidade de contagem fixa de $1/16$, pelo que apenas é estudado um caso particular deste tipo de algoritmos neste relatório. Para cada evento, neste caso, cada palavra do texto, é gerado um número aleatório entre 0 e 1, sendo a palavra contada se o número gerado for menor que a probabilidade de contagem. Isto permite que a contagem seja realizada de forma aproximada, com uma margem de erro controlada e um menor uso de memória.
 
 \begin{algorithm}[H]
 \raggedright
@@ -153,6 +153,8 @@ Um exemplo de um contador aproximado é o algoritmo de contagem aproximada apres
     \State \Return \texttt{D}
 \end{algorithmic}
 \end{algorithm}
+
+Um exemplo de contador aproximado é o algoritmo acima apresentado, designado por \textit{Contador Aproximado}. Neste exemplo, o algoritmo utiliza uma probabilidade de contagem fixa de $1/16$, pelo que apenas é estudado um caso particular deste tipo de algoritmos neste relatório. Para cada evento, neste caso, cada palavra do texto, é gerado um número aleatório entre 0 e 1, sendo a palavra contada se o número gerado for menor que a probabilidade de contagem. Isto permite que a contagem seja realizada de forma aproximada, com uma margem de erro controlada e um menor uso de memória.
 
 Pelo facto deste algoritmo ter uma componente aleatória, para a obtenção dos resultados relativos ao mesmo, esta abordagem foi aplicada a cada livro em análise 20 vezes. Posteriormente, para cada uma das traduções, foi calculada a contagem (\#) mínima, média e máxima das palavras, sendo selecionadas as 10 palavras mais frequentes com base na média, de modo a obter uma estimativa das palavras mais frequentes em cada idioma. Estas contagens, tal como a contagem exata ($\text{\#}_\text{real}$), são apresentadas nas seguintes tabelas (Tabela \ref{table:top10_aprox_ingles} a \ref{table:top10_aprox_finlandes}). Nestas tabelas, para além das contagens referidas, também é possível verificar um código de cores nas palavras, preto, laranja e vermelho, que indicam se a posição da palavra está correta na ordem das 10 palavras mais frequentes, se está deslocada, ou se não faz parte das 10 mais frequentes de todo, respetivamente.
 
@@ -228,7 +230,9 @@ Assim, é possível verificar que este algoritmo é tanto melhor quanto maior é
 
 Pelo facto de muitos processos de geração de dados poderem ser modelados como fluxos de dados, que produzem enormes quantidades de informações simples isoladamente, mas que, em conjunto, formam um todo complexo, torna-se interessante a utilização de métodos que respondam rapidamente a cada nova informação e utilizem recursos muito pequenos em comparação com o volume total de dados. Neste contexto, o algoritmo de contagem \textit{Space-Saving} é uma solução eficiente para a identificação de itens frequentes em \textit{streams} de dados, permitindo acompanhar contagens frequentes de forma eficiente, mesmo sob restrições de memória (número máximo de diferentes palavras a manter, $k$) \cite{CG09}.
 
-Este algoritmo é exposto no pseudocódigo seguinte:
+Este algoritmo é exposto no pseudocódigo a seguir apresentado e designado por \textit{Contador Space-Saving}.
+
+Pelo facto deste algoritmo ser sensível ao valor de $k$, torna-se importante a realização de uma análise para a determinação do valor mínimo de $k$ que permita a obtenção de resultados precisos, neste caso das 10 palavras mais frequentes, sem comprometer a eficiência espacial do algoritmo \cite{ZF22}. Na Tabela \ref{table:top10_ss10} pode-se observar um exemplo de aplicação do algoritmo em análise, para um valor $k$ inadequado.
 
 \begin{algorithm}[H]
 \raggedright
@@ -255,8 +259,6 @@ Este algoritmo é exposto no pseudocódigo seguinte:
     \State \Return \texttt{D}
 \end{algorithmic}
 \end{algorithm}
-
-Pelo facto deste algoritmo ser sensível ao valor de $k$, torna-se importante a realização de uma análise para a determinação do valor mínimo de $k$ que permita a obtenção de resultados precisos, neste caso das 10 palavras mais frequentes, sem comprometer a eficiência espacial do algoritmo \cite{ZF22}. Na Tabela \ref{table:top10_ss10} pode-se observar um exemplo de aplicação do algoritmo em análise, para um valor $k$ inadequado.
 
 \begin{table}[H]
 \centering
